@@ -9,16 +9,16 @@ public class cliente {
 //float para decimal
 
 
-int idcliente;
-String nome;
-String tiposervico;
-String cpf;
-String sexo;
-String datanasc;
+private int idcliente;
+private String nome;
+private String tiposervico;
+private String cpf;
+private String sexo;
+private String datanasc;
 
-String cidade;
-String endereco;
-String telefone;
+private String cidade;
+private String endereco;
+private String telefone;
 
 
 
