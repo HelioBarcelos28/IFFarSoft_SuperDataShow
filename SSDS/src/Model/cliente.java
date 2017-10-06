@@ -18,7 +18,7 @@ private String datanasc;
 
 private String cidade;
 private String endereco;
-private String telefone;
+private String telefone; 
 
 
 
