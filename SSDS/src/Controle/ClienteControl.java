@@ -136,7 +136,7 @@ public String adiciona (Clientes X) {
                          c.setCidade(rs.getString("Cidade"));
                          c.setNomeContato(rs.getString("NomeContato"));
                          
-                         
+                          
                         
 
                          lc.add(c);
