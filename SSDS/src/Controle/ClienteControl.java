@@ -104,7 +104,7 @@ public String adiciona (Clientes X) {
                     return "Exclusão de compra realizada com sucesso.";
                } else {
 
-                    return "Erro ao tentar excluir compra.";
+                    return "Erro ao tentar excluir compra."; 
                }
           } catch (SQLException e) {
                
