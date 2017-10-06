@@ -62,7 +62,7 @@ public String adiciona (Clientes X) {
      }
 
      public String AtualizarCliente(Clientes X, String cod){
-         String sql = "update cliente set Estado =? , Cep =? , RazaoSocial =? , CNPJ =?, Email=? , Telefone=? , Rua=? , Cidade =? where  idCliente ='"+Integer.parseInt(cod)+"';"; 
+         String sql = "update cliente set Estado =? , Cep =? , RazaoSocial =? , CNPJ =?, Email=? , Telefone=? , Rua=? , Cidade =? where  IdCliente ='"+Integer.parseInt(cod)+"';"; 
          
          try {
              PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -101,10 +101,10 @@ public String adiciona (Clientes X) {
                
                if (stmt.executeUpdate() > 0) {
 
-                    return "Exclusão de compra realizada com sucesso.";
+                    return "Exclusão de Cliente realizada com sucesso.";
                } else {
 
-                    return "Erro ao tentar excluir compra.";
+                    return "Erro ao tentar excluir Cliente.";
                }
           } catch (SQLException e) {
                

@@ -1,4 +1,4 @@
-package Model;
+package Metodos;
 
 
 public class cliente {
@@ -9,16 +9,16 @@ public class cliente {
 //float para decimal
 
 
-private int idcliente;
-private String nome;
-private String tiposervico;
-private String cpf;
-private String sexo;
-private String datanasc;
+int idcliente;
+String nome;
+String tiposervico;
+String cpf;
+String sexo;
+String datanasc;
 
-private String cidade;
-private String endereco;
-private String telefone; 
+String cidade;
+String endereco;
+String telefone;
 
 
 
