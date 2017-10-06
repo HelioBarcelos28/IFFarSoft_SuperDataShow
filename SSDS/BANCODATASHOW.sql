@@ -1,0 +1,139 @@
+﻿DROP TABLE CLIENTE;
+DROP TABLE PROJETORES;
+DROP TABLE LOCACOES;
+
+
+CREATE TABLE CLIENTE(
+ID SERIAL,
+ESTADO CHAR(2) NOT NULL,
+CEP CHAR(9) NOT NULL,
+RAZAOSOCIAL VARCHAR(30) NOT NULL,
+CNPJ CHAR(14) NOT NULL,
+EMAIL VARCHAR(50) NOT NULL,
+TELEFONE CHAR(11) NOT NULL,
+RUA VARCHAR(100) NOT NULL, 
+CIDADE VARCHAR(50) NOT NULL,
+NOMECONTATO VARCHAR(50) NOT NULL, 
+CONSTRAINT pk_cliente PRIMARY KEY (id)
+);
+
+CREATE TABLE PROJETORES(
+ID SERIAL,
+MARCA VARCHAR(30),
+MODELOS VARCHAR(40),
+NUMSERIE VARCHAR(10),
+DATACOMPRA DATE,
+DATATROCALAMPADA DATE,
+ANSILUMENS VARCHAR(5),
+ESTADO CHAR(1),
+PRECO NUMERIC(5,2),
+CONSTRAINT pk_projetores PRIMARY KEY (id),
+CONSTRAINT ck_estado CHECK (ESTADO IN ('L', 'M', 'D'))
+);
+
+CREATE TABLE LOCACOES(
+ID SERIAL,
+VALORLOCACAO NUMERIC(5,2),
+DATALOCACAO DATE,
+PREVISTADATADEV DATE,
+DATADEV DATE,
+IDPROJ INTEGER,
+IDCLI INTEGER,
+VALORMULTA NUMERIC(5,2),
+CONSTRAINT pk_locacoes PRIMARY KEY (ID),
+CONSTRAINT fk_cliente_id FOREIGN KEY (IDCLI) REFERENCES CLIENTE(ID),
+CONSTRAINT fk_projetores_id FOREIGN KEY (IDPROJ) REFERENCES PROJETORES(ID)
+);
+
+SELECT * FROM CLIENTE;
+
+SELECT * FROM PROJETORES;
+
+SELECT * FROM LOCACOES;
+
+SELECT C.RAZAOSOCIAL, P.MODELOS, P.MARCA, P.NUMSERIE, L.VALORLOCACAO, L.DATALOCACAO, L.DATADEVOLUCAO
+FROM CLIENTE C, PROJETORES P, LOCACOES L
+WHERE C.ID = L.IDCLI AND P.ID = L.IDPROJ
+
+/*GATILHOS*/
+
+/*Indisponibiliza o Datashow para locação, seta a data de locação e calcula o preço da locação*/
+CREATE TRIGGER trocaestado
+AFTER INSERT ON locacoes
+FOR EACH ROW EXECUTE PROCEDURE troca_estado();
+
+CREATE OR REPLACE FUNCTION troca_estado()
+RETURNS TRIGGER AS $troca_estado$
+DECLARE
+	
+BEGIN
+	IF((SELECT VALORLOCACAO FROM LOCACOES WHERE ID = NEW.ID)IS NULL) THEN
+		UPDATE projetores 
+		SET estado = 'L' 
+		WHERE id = new.idproj;
+		/* Deixar os campos da tabela locação (valorlocacao, valormulta) desativados*/
+		UPDATE locacoes SET datalocacao = 
+		(SELECT CURRENT_DATE)
+		WHERE id = new.id;
+	
+		UPDATE locacoes 
+		SET valorlocacao = 
+			(SELECT (preco*(previstadatadev-datalocacao))
+			FROM projetores 
+			WHERE id = new.idproj)
+		WHERE id = new.id;
+		
+	END IF;
+	RETURN NEW;
+END;
+$troca_estado$ LANGUAGE PLPGSQL;
+
+/*Disponibiliza o DataShow para uma nova locação*/
+CREATE TRIGGER disponds
+AFTER UPDATE ON locacoes
+FOR EACH ROW EXECUTE PROCEDURE disponds();
+
+CREATE OR REPLACE FUNCTION disponds()
+RETURNS TRIGGER AS $disponds$
+DECLARE
+	
+BEGIN
+	IF((SELECT DATADEV FROM LOCACOES WHERE ID = NEW.ID) IS NOT NULL) THEN
+	
+		UPDATE projetores
+		SET estado = 'D' 
+		WHERE id = new.idproj;
+		
+	END IF;
+	RETURN NEW;
+END;
+$disponds$ LANGUAGE PLPGSQL;
+
+/*Aplica a multa por entregar apos a data prevista*/
+CREATE TRIGGER aplicamulta
+AFTER UPDATE ON locacoes
+FOR EACH ROW EXECUTE PROCEDURE aplica_multa();
+
+CREATE OR REPLACE FUNCTION aplica_multa()
+RETURNS TRIGGER AS $aplica_multa$
+DECLARE
+	
+BEGIN
+	IF((select PREVISTA DATADEV FROM LOCACOES WHERE ID = NEW.ID) < ) THEN
+	
+		UPDATE locacoes 
+		SET valormulta = (SELECT preco * (datadev - previstadatadev)
+			FROM projetores p
+			WHERE p.id = old.idproj 
+		WHERE old.id = new.id;
+		
+	END IF;
+	RETURN NEW;
+END;
+$aplica_multa$ LANGUAGE PLPGSQL;
+
+
+UPDATE LOCACOES SET DATADEV = '2017-10-12' WHERE ID = 1;
+
+SELECT (datadev - previstadatadev) FROM LOCACOES WHERE ID = 7
+
