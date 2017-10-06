@@ -131,7 +131,10 @@ public String adiciona (Clientes X) {
                          c.setRazaoSocial(rs.getString("RazaoSocial"));
                          c.setCnpj(rs.getString("CNPJ"));
                          c.setEmail(rs.getString("Email"));
-                         c.setTelefone(rs.getString("Email"));
+                         c.setTelefone(rs.getString("Telefone"));
+                         c.setRua(rs.getString("Rua"));
+                         c.setCidade(rs.getString("Cidade"));
+                         c.setNomeContato(rs.getString("NomeContato"));
                          
                          
                         
