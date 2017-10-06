@@ -1,7 +1,6 @@
 package Controle;
 
-
-import Metodos.cliente;
+import Model.cliente;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +16,7 @@ private Connection conexao;
 //CLASSE PACOTE BANCODADOS
 public ClienteControle() throws SQLException {       
 
-	this.conexao= CriaConexao.getConexao();
+	this.conexao=CriaConexao.getConexao();
 
  }
 
