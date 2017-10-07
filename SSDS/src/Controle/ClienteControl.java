@@ -40,7 +40,7 @@ public String adiciona (Clientes X) {
               stmt.setString(1,X.getEstado());
               stmt.setString(2,X.getCep());
               stmt.setString(3,X.getRazaoSocial());
-              stmt.setString(4,X.getCnpj());
+              stmt.setString(4,X.getCNPJ());
               stmt.setString(5,X.getEmail());
               stmt.setString(6,X.getTelefone());
               stmt.setString(7,X.getRua());
@@ -69,7 +69,7 @@ public String adiciona (Clientes X) {
               stmt.setString(1,X.getEstado());
               stmt.setString(2,X.getCep());
               stmt.setString(3,X.getRazaoSocial());
-              stmt.setString(4,X.getCnpj());
+              stmt.setString(4,X.getCNPJ());
               stmt.setString(5,X.getEmail());
               stmt.setString(6,X.getTelefone());
               stmt.setString(7,X.getRua());
@@ -129,7 +129,7 @@ public String adiciona (Clientes X) {
                          
                          c.setCep(rs.getString("Cep"));
                          c.setRazaoSocial(rs.getString("RazaoSocial"));
-                         c.setCnpj(rs.getString("CNPJ"));
+                         c.setCNPJ(rs.getString("CNPJ"));
                          c.setEmail(rs.getString("Email"));
                          c.setTelefone(rs.getString("Telefone"));
                          c.setRua(rs.getString("Rua"));
