@@ -1,0 +1,55 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Controle;
+
+import Model.Locacoes;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+/**
+ *
+ * @author Helio
+ */
+public class LocacoesControl {
+    private Connection conexao;  
+//CLASSE PACOTE BANCODADOS
+public LocacoesControl() throws SQLException {       
+
+	this.conexao=CriaConexao.getConexao();
+
+ }
+
+public String adiciona (Locacoes X) { 
+
+	String sql = "insert into Locacoes  ( ValorLocacao, DataLocacao , DataDevolucao , PrevistaDataDevolucao , IdProjetor , IdClente , ValorMulta)  values (?,?,?,?,?,?,?) ";
+
+        try {
+               
+              PreparedStatement stmt = conexao.prepareStatement(sql);
+              stmt.setDouble(1,X.getValorLocacao());
+              stmt.setString(2,X.getDataLocacao());
+              stmt.setString(3,X.getDataDevolucao());
+              stmt.setString(4,X.getPrevistaDataDevolucao());
+              stmt.setInt(5,X.getIdProjetor());
+              stmt.setInt(6,X.getIdCliente());
+              stmt.setDouble(7,X.getValorMulta());
+             
+               
+               if (stmt.executeUpdate() > 0) {
+
+                    return "Inclusão de nova Locação realizada com sucesso.";
+               } else {
+
+                    return "Erro ao tentar incluir nova Locação.";
+               }
+                   
+          } catch (SQLException e) {
+               
+               return e.getMessage();
+          }
+     }
+}
