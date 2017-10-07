@@ -29,7 +29,7 @@ public ProjetorControl() throws SQLException {
 
  }
 
-public String adiciona (Projetores X) { 
+public String adicionaProjetor (Projetores X) { 
 
 	String sql = "insert into Projetores  ( Marca , Modelos,NumSerie,DataCompra, DataTrocaLampada, Ansilumens, Estado,  Preco)  values (?,?,?,?,?,?,?,?) ";
 
@@ -60,7 +60,7 @@ public String adiciona (Projetores X) {
           }
      }
 
-     public String AtualizarCliente( Projetores X, String cod){
+     public String AtualizarProjetor( Projetores X, String cod){
          String sql = "update Projetores set marca =? , modelo =?, numSerie =?, dataCompra =?, dataTrocaLampada =?, ansilumens =? , estado =?, preco=?  where  IdProjetores ='"+Integer.parseInt(cod)+"';"; 
          
          try {
@@ -87,7 +87,7 @@ public String adiciona (Projetores X) {
          
      }
      
-       public String ExcluirCliente(Projetores X, String cod) {
+       public String ExcluirProjetor(Projetores X, String cod) {
           
           String sql = "DELETE FROM Projetores WHERE IdProjetores = '"+
                   Integer.parseInt(cod)+"';";
@@ -110,8 +110,8 @@ public String adiciona (Projetores X) {
           }
      }
        
-     public List<Projetores> ListarTodosClientes(){
-         String SQL = "SELECT * FROM cliente;"; 
+     public List<Projetores> ListarTodosProjetores(){
+         String SQL = "SELECT * FROM Projetores;"; 
 
         List<Projetores>  lc= new ArrayList<Projetores>();
        try {
