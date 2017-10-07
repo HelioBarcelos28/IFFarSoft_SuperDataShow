@@ -10,6 +10,7 @@ package Model;
  * @author Helio
  */
 public class Projetores {
+        private int IdProjetor;
         private String Marca ;
         private String Modelos;
         private String NumSerie;
@@ -18,6 +19,14 @@ public class Projetores {
         private String Ansilumens; 
         private String Estado;  
         private Double Preco;
+
+    public int getIdProjetor() {
+        return IdProjetor;
+    }
+
+    public void setIdProjetor(int IdProjetor) {
+        this.IdProjetor = IdProjetor;
+    }
 
     public String getMarca() {
         return Marca;
