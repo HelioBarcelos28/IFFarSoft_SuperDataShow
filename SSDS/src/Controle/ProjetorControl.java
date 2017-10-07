@@ -5,6 +5,7 @@
  */
 package Controle;
 
+import Model.Clientes;
 import Model.Projetores;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,14 +31,14 @@ public ProjetorControl() throws SQLException {
 
 public String adiciona (Projetores X) { 
 
-	String sql = "insert into Cliente  ( Estado , Cep , RazaoSocial , CNPJ , Email , Telefone , Rua , Cidade , NomeContato)  values (?,?,?,?,?,?,?,?,?) ";
+	String sql = "insert into Projetores  ( Marca , Modelos,NumSerie,DataCompra, DataTrocaLampada, Ansilumens, Estado,  Preco)  values (?,?,?,?,?,?,?,?) ";
 
         try {
                
               PreparedStatement stmt = conexao.prepareStatement(sql);
               
               stmt.setString(1,X.getMarca());
-              stmt.setString(2,X.getModelo());
+              stmt.setString(2,X.getModelos());
               stmt.setString(3,X.getNumSerie());
               stmt.setString(4,X.getDataCompra());
               stmt.setString(5,X.getDataTrocaLampada());
@@ -65,7 +66,7 @@ public String adiciona (Projetores X) {
          try {
              PreparedStatement stmt = conexao.prepareStatement(sql);
               stmt.setString(1,X.getMarca());
-              stmt.setString(2,X.getModelo());
+              stmt.setString(2,X.getModelos());
               stmt.setString(3,X.getNumSerie());
               stmt.setString(4,X.getDataCompra());
               stmt.setString(5,X.getDataTrocaLampada());
@@ -102,17 +103,17 @@ public String adiciona (Projetores X) {
                } else {
 
                     return "Erro ao tentar excluir`Projetor.";
-               }
+               }//
           } catch (SQLException e) {
                
                return e.getMessage();
           }
      }
        
-     public List<Projetores> ListarTodosClientes(){
+     public List<Clientes> ListarTodosClientes(){
          String SQL = "SELECT * FROM cliente;"; 
 
-        List<Projetores> lc = new ArrayList<Projetores>();
+        List<Clientes>  lc= new ArrayList<Clientes>();
        try {
 
                PreparedStatement ps = conexao.prepareStatement(SQL);
@@ -125,7 +126,7 @@ public String adiciona (Projetores X) {
                          Projetores p = new Projetores();
                          
                          p.setMarca(rs.getString("Marca"));
-                         p.setModelo(rs.getString("Modelo"));
+                         p.setModelos(rs.getString("Modelo"));
                          p.setNumSerie(rs.getString("NumSerie"));
                          p.setDataCompra(rs.getString("DataCompra"));
                          p.setDataTrocaLampada(rs.getString("DataTrocaLampada"));
