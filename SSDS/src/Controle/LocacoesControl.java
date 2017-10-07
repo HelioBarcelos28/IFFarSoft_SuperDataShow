@@ -23,7 +23,7 @@ public LocacoesControl() throws SQLException {
 
  }
 
-public String adiciona (Locacoes X) { 
+public String adicionaLocacoes (Locacoes X) { 
 
 	String sql = "insert into Locacoes  ( ValorLocacao, DataLocacao , DataDevolucao , PrevistaDataDevolucao , IdProjetor , IdClente , ValorMulta)  values (?,?,?,?,?,?,?) ";
 
@@ -51,5 +51,33 @@ public String adiciona (Locacoes X) {
                
                return e.getMessage();
           }
+        
+        public String AtualizarLocacoes(Locacoes X, String cod){
+         String sql = "update cliente set ValorLocacao =?, DataLocacao =?, DataDevolucao =? , PrevistaDataDevolucao =?, IdProjetor =?, IdClente =?, ValorMulta=? where  idCliente ='"+Integer.parseInt(cod)+"';"; 
+         
+         try {
+             PreparedStatement stmt = conexao.prepareStatement(sql);
+              stmt.setDouble(1,X.getValorLocacao());
+              stmt.setString(2,X.getDataLocacao());
+              stmt.setString(3,X.getDataDevolucao());
+              stmt.setString(4,X.getPrevistaDataDevolucao());
+              stmt.setInt(5,X.getIdProjetor());
+              stmt.setInt(6,X.getIdCliente());
+              stmt.setDouble(7,X.getValorMulta());
+               
+               if (stmt.executeUpdate() > 0) {
+
+                    return "Atualização de nova Locação realizada com sucesso.";
+               } else {
+
+                    return "Erro ao tentar Atualizar nova Locação.";
+               }
+         } catch (Exception e) {
+             return e.getMessage();
+         }
+         
      }
+        
+     
+
 }
