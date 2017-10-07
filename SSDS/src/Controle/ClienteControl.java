@@ -30,7 +30,7 @@ public ClienteControl() throws SQLException {
 //Código para adicionar dados no banco de dados
 
 //CLASSE PCT METODOS
-public String adiciona (Clientes X) { 
+public String adicionaCliente (Clientes X) { 
 
 	String sql = "insert into Cliente  ( Estado , Cep , RazaoSocial , CNPJ , Email , Telefone , Rua , Cidade , NomeContato)  values (?,?,?,?,?,?,?,?,?) ";
 
