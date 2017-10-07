@@ -110,10 +110,10 @@ public String adiciona (Projetores X) {
           }
      }
        
-     public List<Clientes> ListarTodosClientes(){
+     public List<Projetores> ListarTodosClientes(){
          String SQL = "SELECT * FROM cliente;"; 
 
-        List<Clientes>  lc= new ArrayList<Clientes>();
+        List<Projetores>  lc= new ArrayList<Projetores>();
        try {
 
                PreparedStatement ps = conexao.prepareStatement(SQL);
