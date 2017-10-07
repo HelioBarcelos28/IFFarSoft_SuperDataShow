@@ -52,7 +52,7 @@ public String adicionaLocacoes (Locacoes X) {
                return e.getMessage();
           }
         
-        public String AtualizarLocacoes(Locacoes X, String cod){
+        public String atualizarLocacoes(Locacoes X, String cod){
          String sql = "update cliente set ValorLocacao =?, DataLocacao =?, DataDevolucao =? , PrevistaDataDevolucao =?, IdProjetor =?, IdClente =?, ValorMulta=? where  idCliente ='"+Integer.parseInt(cod)+"';"; 
          
          try {
@@ -76,6 +76,29 @@ public String adicionaLocacoes (Locacoes X) {
              return e.getMessage();
          }
          
+     }
+       
+      public String ExcluirLocacoes(Locacoes X, String cod) {
+          
+          String sql = "DELETE FROM Locacoes WHERE IdLocacoes = '"+
+                  Integer.parseInt(cod)+"';";
+           
+          try {
+               
+               PreparedStatement stmt = conexao.prepareStatement(sql);
+               
+               
+               if (stmt.executeUpdate() > 0) {
+
+                    return "Exclusão de Locação realizada com sucesso.";
+               } else {
+
+                    return "Erro ao tentar excluir Locação."; 
+               }
+          } catch (SQLException e) {
+               
+               return e.getMessage();
+          }
      }
         
      
