@@ -52,7 +52,8 @@ public String adicionaLocacoes (Locacoes X) {
                return e.getMessage();
           }
         
-        public String atualizarLocacoes(Locacoes X, String cod){
+    
+    public String AtualizaLocacoes(Locacoes X,String cod){
          String sql = "update cliente set ValorLocacao =?, DataLocacao =?, DataDevolucao =? , PrevistaDataDevolucao =?, IdProjetor =?, IdClente =?, ValorMulta=? where  idCliente ='"+Integer.parseInt(cod)+"';"; 
          
          try {

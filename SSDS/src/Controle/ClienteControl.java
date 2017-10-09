@@ -78,10 +78,10 @@ public String adicionaCliente (Clientes X) {
                
                if (stmt.executeUpdate() > 0) {
 
-                    return "Inclusão de novo Cliente realizada com sucesso.";
+                    return "Atualização de novo Cliente realizada com sucesso.";
                } else {
 
-                    return "Erro ao tentar incluir novo Cliente.";
+                    return "Erro ao tentar Atualizar  novo Cliente.";
                }
          } catch (Exception e) {
              return e.getMessage();
