@@ -8,9 +8,13 @@
  *
  * Created on 05/10/2011, 14:35:36
  */
-package Visual;
+package Visual.Principal;
 
 import Controle.CriaConexao;
+import Visual.AlterarCliente;
+import Visual.Cliente.SalvarCliente;
+import Visual.ExcluirClientes;
+import Visual.VisualizarCliente;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
@@ -611,18 +615,18 @@ colocarPanel(new SalvarCliente());
 }//GEN-LAST:event_jButton3ActionPerformed
 
 private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-colocarPanel(new SalvarFuncionarios());
+//colocarPanel(new SalvarFuncionarios());
     // TODO add your handling code here:
 }//GEN-LAST:event_jButton1ActionPerformed
 
 private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-colocarPanel(new VisualizarContatoWeb());
+//colocarPanel(new VisualizarContatoWeb());
     // TODO add your handling code here:
 }//GEN-LAST:event_jButton4ActionPerformed
 
 private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
 
-    colocarPanel(new SalvarServiços());// TODO add your handling code here:
+   // colocarPanel(new SalvarServiços());// TODO add your handling code here:
 }//GEN-LAST:event_jButton6ActionPerformed
 
 private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -643,12 +647,12 @@ private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 }//GEN-LAST:event_jMenuItem5ActionPerformed
 
 private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
-colocarPanel(new AlterarFuncionarios());
+//colocarPanel(new AlterarFuncionarios());
     // TODO add your handling code here:
 }//GEN-LAST:event_jMenuItem6ActionPerformed
 
 private void jMenu4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu4ActionPerformed
-colocarPanel(new VisualizarFuncionarios());
+//colocarPanel(new VisualizarFuncionarios());
     // TODO add your handling code here:
 }//GEN-LAST:event_jMenu4ActionPerformed
 
@@ -657,7 +661,7 @@ private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FI
 }//GEN-LAST:event_jMenuItem7ActionPerformed
 
 private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-colocarPanel(new AlterarServiços());
+//colocarPanel(new AlterarServiços());
     // TODO add your handling code here:
 }//GEN-LAST:event_jMenuItem8ActionPerformed
 
@@ -671,12 +675,12 @@ colocarPanel(new VisualizarCliente());
 }//GEN-LAST:event_jMenuItem2ActionPerformed
 
 private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
-colocarPanel(new VisualizarFuncionarios());
+//colocarPanel(new VisualizarFuncionarios());
     // TODO add your handling code here:
 }//GEN-LAST:event_jMenuItem9ActionPerformed
 
 private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
-colocarPanel(new VisualizarServiços());
+//colocarPanel(new VisualizarServiços());
     // TODO add your handling code here:
 }//GEN-LAST:event_jMenuItem10ActionPerformed
 
@@ -686,12 +690,12 @@ colocarPanel(new ExcluirClientes());
 }//GEN-LAST:event_jMenuItem11ActionPerformed
 
 private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
-colocarPanel(new ExcluirFuncionarios());
+//colocarPanel(new ExcluirFuncionarios());
     // TODO add your handling code here:
 }//GEN-LAST:event_jMenuItem12ActionPerformed
 
 private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-colocarPanel(new ExcluirServiços());
+//colocarPanel(new ExcluirServiços());
     // TODO add your handling code here:
 }//GEN-LAST:event_jMenuItem13ActionPerformed
 
@@ -701,12 +705,12 @@ colocarPanel(new SalvarCliente());
 }//GEN-LAST:event_jMenuItem14ActionPerformed
 
 private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
-colocarPanel(new SalvarFuncionarios());
+//colocarPanel(new SalvarFuncionarios());
     // TODO add your handling code here:
 }//GEN-LAST:event_jMenuItem15ActionPerformed
 
 private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
-colocarPanel(new SalvarServiços());
+//colocarPanel(new SalvarServiços());
     // TODO add your handling code here:
 }//GEN-LAST:event_jMenuItem16ActionPerformed
 
@@ -738,12 +742,12 @@ colocarPanel(new VisualizarCliente());
 }//GEN-LAST:event_jMenuItem19ActionPerformed
 
 private void jMenuItem21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem21ActionPerformed
-colocarPanel(new VisualizarFuncionarios());
+//colocarPanel(new VisualizarFuncionarios());
     // TODO add your handling code here:
 }//GEN-LAST:event_jMenuItem21ActionPerformed
 
 private void jMenuItem23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem23ActionPerformed
-colocarPanel(new VisualizarServiços());
+//colocarPanel(new VisualizarServiços());
     // TODO add your handling code here:
 }//GEN-LAST:event_jMenuItem23ActionPerformed
 

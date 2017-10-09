@@ -19,7 +19,7 @@ public class CriaConexao {
 	System.out.println ("Conectando ao banco");
 
 //NOME_BASE_DADOS = Nome da base de dados no MySQL
-	return DriverManager.getConnection("jdbc:mysql://localhost/baseprojetofinalheliosh","root","");
+	return DriverManager.getConnection("jdbc:mysql://localhost/IFFarSoft_SuperDataShow/SSDS/Projetor","root","");
 
     } 	catch (ClassNotFoundException e ){
         	System.out.println("Problemas na conexão do banco !!!");
@@ -36,7 +36,7 @@ public class CriaConexao {
             Class.forName("org.postgresql.Driver").newInstance();
             
             
-            String URL = "jdbc:postgresql://localhost:5432/projetor";
+            String URL = "jdbc:postgresql://localhost:5432/Projetor";
             String usuario = "postgres";
             String senha = "ciet";
             
