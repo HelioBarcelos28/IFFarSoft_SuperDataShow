@@ -324,7 +324,7 @@ public class LocacaoController {
 	*/
 	public ArrayList<Locacao> listarLocacoesEspecificasValorLocacao(String valorLocacao, int ordenarCrescenteDecrescente) {
 		
-		String SQL = "SELECT * FROM Locacao WHERE valorLocacao LIKE = '" +valorLocacao+ "'";
+		String SQL = "SELECT * FROM Locacao WHERE valorLocacao LIKE '" +valorLocacao+ "'";
 		
 		if (ordenarCrescenteDecrescente == 1) {
 			
@@ -367,5 +367,374 @@ public class LocacaoController {
 		} catch (SQLException e) { return null; }
 	}
 	
-	// TODO
+	/**
+	* 
+	* @param dataLocacao
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Locacao> listarLocacoesEspecificasDataLocacao(String dataLocacao, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Locacao WHERE dataLocacao LIKE '" +dataLocacao+ "'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Locacao> listaProjetor = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Locacao locacao = new Locacao();
+
+					locacao.setValorLocacao			(rs.getString("valorLocacao"));
+					locacao.setDataLocacao			(rs.getString("dataLocacao"));
+					locacao.setDataDevolucaoPrevista	(rs.getString("dataDevolucaoPrevista"));
+					locacao.setDataDevolucao		(rs.getString("dataDevolucao"));
+					locacao.setHorasUsadas			(rs.getString("horasUsadas"));
+					locacao.setIdProjetor			(rs.getString("idProjetor"));
+					locacao.setIdLocacao			(rs.getString("idLocacao"));
+					locacao.setValorMulta			(rs.getString("valorMulta"));
+					
+					listaProjetor.add(locacao);
+				}
+			}
+
+			return listaProjetor;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param dataDevolucaoPrevista
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Locacao> listarLocacoesEspecificasDataDevolucaoPrevista(String dataDevolucaoPrevista, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Locacao WHERE dataDevolucaoPrevista LIKE '" +dataDevolucaoPrevista+ "'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Locacao> listaProjetor = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Locacao locacao = new Locacao();
+
+					locacao.setValorLocacao			(rs.getString("valorLocacao"));
+					locacao.setDataLocacao			(rs.getString("dataLocacao"));
+					locacao.setDataDevolucaoPrevista	(rs.getString("dataDevolucaoPrevista"));
+					locacao.setDataDevolucao		(rs.getString("dataDevolucao"));
+					locacao.setHorasUsadas			(rs.getString("horasUsadas"));
+					locacao.setIdProjetor			(rs.getString("idProjetor"));
+					locacao.setIdLocacao			(rs.getString("idLocacao"));
+					locacao.setValorMulta			(rs.getString("valorMulta"));
+					
+					listaProjetor.add(locacao);
+				}
+			}
+
+			return listaProjetor;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param dataDevolucao
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Locacao> listarLocacoesEspecificasDataDevolucao(String dataDevolucao, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Locacao WHERE dataDevolucao LIKE '" +dataDevolucao+ "'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Locacao> listaProjetor = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Locacao locacao = new Locacao();
+
+					locacao.setValorLocacao			(rs.getString("valorLocacao"));
+					locacao.setDataLocacao			(rs.getString("dataLocacao"));
+					locacao.setDataDevolucaoPrevista	(rs.getString("dataDevolucaoPrevista"));
+					locacao.setDataDevolucao		(rs.getString("dataDevolucao"));
+					locacao.setHorasUsadas			(rs.getString("horasUsadas"));
+					locacao.setIdProjetor			(rs.getString("idProjetor"));
+					locacao.setIdLocacao			(rs.getString("idLocacao"));
+					locacao.setValorMulta			(rs.getString("valorMulta"));
+					
+					listaProjetor.add(locacao);
+				}
+			}
+
+			return listaProjetor;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param horasUsadas
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Locacao> listarLocacoesEspecificasHorasUsadas(String horasUsadas, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Locacao WHERE horasUsadas LIKE '" +horasUsadas+ "'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Locacao> listaProjetor = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Locacao locacao = new Locacao();
+
+					locacao.setValorLocacao			(rs.getString("valorLocacao"));
+					locacao.setDataLocacao			(rs.getString("dataLocacao"));
+					locacao.setDataDevolucaoPrevista	(rs.getString("dataDevolucaoPrevista"));
+					locacao.setDataDevolucao		(rs.getString("dataDevolucao"));
+					locacao.setHorasUsadas			(rs.getString("horasUsadas"));
+					locacao.setIdProjetor			(rs.getString("idProjetor"));
+					locacao.setIdLocacao			(rs.getString("idLocacao"));
+					locacao.setValorMulta			(rs.getString("valorMulta"));
+					
+					listaProjetor.add(locacao);
+				}
+			}
+
+			return listaProjetor;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param idProjetor
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Locacao> listarLocacoesEspecificasIdProjetor(String idProjetor, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Locacao WHERE idProjetor LIKE '" +idProjetor+ "'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Locacao> listaProjetor = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Locacao locacao = new Locacao();
+
+					locacao.setValorLocacao			(rs.getString("valorLocacao"));
+					locacao.setDataLocacao			(rs.getString("dataLocacao"));
+					locacao.setDataDevolucaoPrevista	(rs.getString("dataDevolucaoPrevista"));
+					locacao.setDataDevolucao		(rs.getString("dataDevolucao"));
+					locacao.setHorasUsadas			(rs.getString("horasUsadas"));
+					locacao.setIdProjetor			(rs.getString("idProjetor"));
+					locacao.setIdLocacao			(rs.getString("idLocacao"));
+					locacao.setValorMulta			(rs.getString("valorMulta"));
+					
+					listaProjetor.add(locacao);
+				}
+			}
+
+			return listaProjetor;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param idLocacao
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Locacao> listarLocacoesEspecificasIdLocacao(String idLocacao, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Locacao WHERE idLocacao LIKE '" +idLocacao+ "'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Locacao> listaProjetor = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Locacao locacao = new Locacao();
+
+					locacao.setValorLocacao			(rs.getString("valorLocacao"));
+					locacao.setDataLocacao			(rs.getString("dataLocacao"));
+					locacao.setDataDevolucaoPrevista	(rs.getString("dataDevolucaoPrevista"));
+					locacao.setDataDevolucao		(rs.getString("dataDevolucao"));
+					locacao.setHorasUsadas			(rs.getString("horasUsadas"));
+					locacao.setIdProjetor			(rs.getString("idProjetor"));
+					locacao.setIdLocacao			(rs.getString("idLocacao"));
+					locacao.setValorMulta			(rs.getString("valorMulta"));
+					
+					listaProjetor.add(locacao);
+				}
+			}
+
+			return listaProjetor;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param valorMulta
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Locacao> listarLocacoesEspecificasValorMulta(String valorMulta, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Locacao WHERE valorMulta LIKE = '" +valorMulta+ "'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Locacao> listaProjetor = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Locacao locacao = new Locacao();
+
+					locacao.setValorLocacao			(rs.getString("valorLocacao"));
+					locacao.setDataLocacao			(rs.getString("dataLocacao"));
+					locacao.setDataDevolucaoPrevista	(rs.getString("dataDevolucaoPrevista"));
+					locacao.setDataDevolucao		(rs.getString("dataDevolucao"));
+					locacao.setHorasUsadas			(rs.getString("horasUsadas"));
+					locacao.setIdProjetor			(rs.getString("idProjetor"));
+					locacao.setIdLocacao			(rs.getString("idLocacao"));
+					locacao.setValorMulta			(rs.getString("valorMulta"));
+					
+					listaProjetor.add(locacao);
+				}
+			}
+
+			return listaProjetor;
+
+		} catch (SQLException e) { return null; }
+	}
 }

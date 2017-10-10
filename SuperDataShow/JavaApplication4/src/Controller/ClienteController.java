@@ -325,7 +325,7 @@ public class ClienteController {
 	*/
 	public ArrayList<Cliente> listarClientesEspecificosEstado(String estado, int ordenarCrescenteDecrescente) {
 		
-		String SQL = "SELECT * FROM Cliente WHERE estado = '%" +estado+ "%'";
+		String SQL = "SELECT * FROM Cliente WHERE estado LIKE '%" +estado+ "%'";
 		
 		if (ordenarCrescenteDecrescente == 1) {
 			
@@ -379,7 +379,7 @@ public class ClienteController {
 	*/
 	public ArrayList<Cliente> listarClientesEspecificosCep(String cep, int ordenarCrescenteDecrescente) {
 		
-		String SQL = "SELECT * FROM Cliente WHERE cep = '%" +cep+ "%'";
+		String SQL = "SELECT * FROM Cliente WHERE cep LIKE '%" +cep+ "%'";
 		
 		if (ordenarCrescenteDecrescente == 1) {
 			
@@ -433,7 +433,7 @@ public class ClienteController {
 	*/
 	public ArrayList<Cliente> listarClientesEspecificosRazaoSocial(String razaoSocial, int ordenarCrescenteDecrescente) {
 		
-		String SQL = "SELECT * FROM Cliente WHERE razaoSocial = '%" +razaoSocial+ "%'";
+		String SQL = "SELECT * FROM Cliente WHERE razaoSocial LIKE '%" +razaoSocial+ "%'";
 		
 		if (ordenarCrescenteDecrescente == 1) {
 			
@@ -487,7 +487,7 @@ public class ClienteController {
 	*/
 	public ArrayList<Cliente> listarClientesEspecificosRua(String rua, int ordenarCrescenteDecrescente) {
 		
-		String SQL = "SELECT * FROM Cliente WHERE rua = '%" +rua+ "%'";
+		String SQL = "SELECT * FROM Cliente WHERE rua LIKE '%" +rua+ "%'";
 		
 		if (ordenarCrescenteDecrescente == 1) {
 			
@@ -541,7 +541,7 @@ public class ClienteController {
 	*/
 	public ArrayList<Cliente> listarClientesEspecificosCidade(String cidade, int ordenarCrescenteDecrescente) {
 		
-		String SQL = "SELECT * FROM Cliente WHERE cidade = '%" +cidade+ "%'";
+		String SQL = "SELECT * FROM Cliente WHERE cidade LIKE '%" +cidade+ "%'";
 		
 		if (ordenarCrescenteDecrescente == 1) {
 			
@@ -595,7 +595,7 @@ public class ClienteController {
 	*/
 	public ArrayList<Cliente> listarClientesEspecificosNomeContato(String nomeContato, int ordenarCrescenteDecrescente) {
 		
-		String SQL = "SELECT * FROM Cliente WHERE nomeContato = '%" +nomeContato+ "%'";
+		String SQL = "SELECT * FROM Cliente WHERE nomeContato LIKE '%" +nomeContato+ "%'";
 		
 		if (ordenarCrescenteDecrescente == 1) {
 			

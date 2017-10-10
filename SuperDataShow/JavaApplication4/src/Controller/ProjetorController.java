@@ -487,7 +487,7 @@ public class ProjetorController {
 	*/
 	public ArrayList<Projetor> listarProjetoresEspecificosDataCompra(String dataCompra, int ordenarCrescenteDecrescente) {
 		
-		String SQL = "SELECT * FROM Projetor WHERE dataCompra = '" +formatarData(dataCompra)+ "'";
+		String SQL = "SELECT * FROM Projetor WHERE dataCompra = '%" +formatarData(dataCompra)+ "%'";
 		
 		if (ordenarCrescenteDecrescente == 1) {
 			
