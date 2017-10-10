@@ -28,7 +28,7 @@ modelo	 		VARCHAR(40),
 numeroSerie 		VARCHAR(10),
 dataCompra 		DATE,
 ansiLumens 		VARCHAR(5),
-estado 			CHAR(1),
+estado 			CHAR(2) DEFAULT 'D',
 preco 			NUMERIC(7, 2),
 numeroHorasUso		INTEGER,
 
@@ -65,6 +65,10 @@ INSERT INTO Locacao VALUES (DEFAULT, 50, CURRENT_DATE, CURRENT_DATE + 3, CURRENT
 INSERT INTO Locacao VALUES (DEFAULT, 50, CURRENT_DATE, CURRENT_DATE + 3, CURRENT_DATE + 1, DEFAULT, 3, 1, 0);
 INSERT INTO Locacao VALUES (DEFAULT, 50, CURRENT_DATE, CURRENT_DATE + 3, CURRENT_DATE + 1, DEFAULT, 2, 1, 0);
 
+
+select * from estados;
+
+
 SELECT * FROM Cliente;
 
 SELECT * FROM Projetor;
@@ -76,7 +80,7 @@ FROM Cliente C, Projetor P, Locacao L
 WHERE C.idCliente = L.idCliente AND P.idProjetor = L.idProjetor
 
 
-/*gatinhos*/
+/*gatilhos*/
 
 /*Indisponibiliza o Datashow para locação, seta a data de locação e calcula o preço da locação*/
 CREATE TRIGGER trocaestado
@@ -92,6 +96,7 @@ FOR EACH ROW EXECUTE PROCEDURE troca_estado();
 			UPDATE projetor 
 			SET estado = 'L' 
 			WHERE idProjetor = new.idProjetor;
+
 			UPDATE locacao SET dataLocacao = 
 			(SELECT CURRENT_DATE)
 			WHERE idLocacao = new.idLocacao;
@@ -107,7 +112,7 @@ FOR EACH ROW EXECUTE PROCEDURE troca_estado();
 		RETURN NEW;
 	END;
 	$troca_estado$ LANGUAGE PLPGSQL;
-
+	
 /*Disponibiliza o DataShow para uma nova locação*/
 CREATE TRIGGER disponds
 AFTER UPDATE ON locacao
@@ -119,7 +124,7 @@ FOR EACH ROW EXECUTE PROCEDURE disponds();
 	
 	BEGIN
 		IF((SELECT dataDevolucao FROM Locacao WHERE idLocacao = new.idLocacao) IS NOT NULL AND (SELECT numeroHorasUso FROM Projetor
-			WHERE idProjetor = NEW.idProjetor) > 0 ) THEN
+			WHERE idProjetor = NEW.idProjetor)  0 ) THEN
 	
 			UPDATE projetor
 			SET estado = 'D' 
@@ -217,22 +222,41 @@ FOR EACH ROW EXECUTE PROCEDURE VetandoLocacao();
 
 	BEGIN
 
-		IF ((SELECT estado FROM Projetor WHERE idProjetor = NEW.idProjetor) != 'D') THEN
-			IF ((SELECT estado FROM Projetor WHERE idProjetor = NEW.idProjetor) = 'M') THEN
+		IF ((SELECT estado FROM Projetor WHERE idProjetor = NEW.idProjetor) = 'M') THEN
 				RETURN NULL;
 				RAISE NOTICE 'O Projetor está em Manutenção';
 				
-			ELSIF ((SELECT estado FROM Projetor WHERE idProjetor = NEW.idProjetor) = 'L') THEN
+		ELSIF ((SELECT estado FROM Projetor WHERE idProjetor = NEW.idProjetor) = 'L') THEN
 				RETURN NULL;
 				RAISE NOTICE 'O Projetor está Locado';
-            ELSIF ((SELECT estado FROM Projetor WHERE idProjetor = NEW.idProjetor) = 'FE') THEN
+		ELSIF ((SELECT estado FROM Projetor WHERE idProjetor = NEW.idProjetor) = 'FE') THEN
 				RETURN NULL;
 				RAISE NOTICE 'O Projetor não se encontra mais no estoque!';
 			END IF;
-		END IF;
+		
 		RETURN NEW;
 	END; $VetandoLocacao$ LANGUAGE PLPGSQL; 
 
+/* atualização data prevista*/
+CREATE TRIGGER attDataPrevista
+AFTER UPDATE OF dataDevolucaoPrevista ON locacao
+FOR EACH ROW EXECUTE PROCEDURE attDataPrevista();
 
-
-
+	CREATE OR REPLACE FUNCTION attDataPrevista()
+	RETURNS TRIGGER AS $attDataPrevista$
+	DECLARE
+	
+	BEGIN
+		IF(TRUE) THEN
+			
+			UPDATE locacao
+			SET valorLocacao = 
+			(SELECT (preco*(NEW.dataDevolucaoPrevista - dataLocacao))
+			FROM projetor
+			WHERE idProjetor = new.idProjetor)
+			WHERE idLocacao = new.idLocacao;
+		
+		END IF;
+		RETURN NEW;
+	END;
+	$attDataPrevista$ LANGUAGE PLPGSQL;
