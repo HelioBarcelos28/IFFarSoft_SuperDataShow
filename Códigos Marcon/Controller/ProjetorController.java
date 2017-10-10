@@ -261,7 +261,7 @@ public class ProjetorController {
 		} catch (NumberFormatException | SQLException e) { return e.getMessage(); }
 	}
 	
-	public String excluirProjetor(Projetor projetor, String id) {
+	public String excluirProjetor(String id) {
 
 		String SQL = "DELETE FROM Projetor WHERE idProjetor = '" +Integer.parseInt(id)+ "';";
 
