@@ -105,6 +105,11 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setText("Bem-vindo ao Super Data Show");
 
         Button_entrar.setText("Entrar");
+        Button_entrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_entrarActionPerformed(evt);
+            }
+        });
 
         jTextField1.setBackground(new java.awt.Color(36, 46, 68));
         jTextField1.setFont(new java.awt.Font("Roboto Lt", 0, 12)); // NOI18N
@@ -181,6 +186,13 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Button_entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_entrarActionPerformed
+        //
+        if (0==0) {
+            
+        }
+    }//GEN-LAST:event_Button_entrarActionPerformed
 
     /**
      * @param args the command line arguments
