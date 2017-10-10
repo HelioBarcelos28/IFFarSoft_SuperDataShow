@@ -279,9 +279,9 @@ public class LocacaoController {
 		} catch (SQLException e) { return e.getMessage(); }
 	}
 	
-	public ArrayList<Locacao> ListarTodosProjetores() {
+	public ArrayList<Locacao> listarTodasLocacoes() {
 		
-		String SQL = "SELECT * FROM Locacao;";
+		String SQL = "SELECT * FROM Locacao ORDER BY ASC;";
 
 		ArrayList<Locacao> listaProjetor = new ArrayList();
 		
@@ -313,4 +313,59 @@ public class LocacaoController {
 
 		} catch (SQLException e) { return null; }
 	}
+	
+	/**
+	* 
+	* @param valorLocacao
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Locacao> listarLocacoesEspecificasValorLocacao(String valorLocacao, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Locacao WHERE valorLocacao LIKE = '" +valorLocacao+ "'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Locacao> listaProjetor = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Locacao locacao = new Locacao();
+
+					locacao.setValorLocacao			(rs.getString("valorLocacao"));
+					locacao.setDataLocacao			(rs.getString("dataLocacao"));
+					locacao.setDataDevolucaoPrevista	(rs.getString("dataDevolucaoPrevista"));
+					locacao.setDataDevolucao		(rs.getString("dataDevolucao"));
+					locacao.setHorasUsadas			(rs.getString("horasUsadas"));
+					locacao.setIdProjetor			(rs.getString("idProjetor"));
+					locacao.setIdLocacao			(rs.getString("idLocacao"));
+					locacao.setValorMulta			(rs.getString("valorMulta"));
+					
+					listaProjetor.add(locacao);
+				}
+			}
+
+			return listaProjetor;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	// TODO
 }

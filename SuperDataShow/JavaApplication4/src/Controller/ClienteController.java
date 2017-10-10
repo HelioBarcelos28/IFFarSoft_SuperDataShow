@@ -314,4 +314,328 @@ public class ClienteController {
 
 		} catch (SQLException e) { return null; }
 	}
+	
+	/**
+	* 
+	* @param estado
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Cliente> listarClientesEspecificosEstado(String estado, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Cliente WHERE estado = '%" +estado+ "%'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Cliente> listaCliente = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Cliente cliente = new Cliente();
+					
+					cliente.setEstado		(rs.getString("estado"));
+					cliente.setCep		(rs.getString("cep"));
+					cliente.setRazaoSocial	(rs.getString("razaoSocial"));
+					cliente.setCnpj		(rs.getString("cnpj"));
+					cliente.setEmail		(rs.getString("email"));
+					cliente.setTelefone	(rs.getString("telefone"));
+					cliente.setRua		(rs.getString("rua"));
+					cliente.setCidade		(rs.getString("cidade"));
+					cliente.setNomeContato	(rs.getString("nomeContato"));
+
+					listaCliente.add(cliente);
+				}
+			}
+
+			return listaCliente;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param cep
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Cliente> listarClientesEspecificosCep(String cep, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Cliente WHERE cep = '%" +cep+ "%'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Cliente> listaCliente = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Cliente cliente = new Cliente();
+					
+					cliente.setEstado		(rs.getString("estado"));
+					cliente.setCep		(rs.getString("cep"));
+					cliente.setRazaoSocial	(rs.getString("razaoSocial"));
+					cliente.setCnpj		(rs.getString("cnpj"));
+					cliente.setEmail		(rs.getString("email"));
+					cliente.setTelefone	(rs.getString("telefone"));
+					cliente.setRua		(rs.getString("rua"));
+					cliente.setCidade		(rs.getString("cidade"));
+					cliente.setNomeContato	(rs.getString("nomeContato"));
+
+					listaCliente.add(cliente);
+				}
+			}
+
+			return listaCliente;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param razaoSocial
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Cliente> listarClientesEspecificosRazaoSocial(String razaoSocial, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Cliente WHERE razaoSocial = '%" +razaoSocial+ "%'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Cliente> listaCliente = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Cliente cliente = new Cliente();
+					
+					cliente.setEstado		(rs.getString("estado"));
+					cliente.setCep		(rs.getString("cep"));
+					cliente.setRazaoSocial	(rs.getString("razaoSocial"));
+					cliente.setCnpj		(rs.getString("cnpj"));
+					cliente.setEmail		(rs.getString("email"));
+					cliente.setTelefone	(rs.getString("telefone"));
+					cliente.setRua		(rs.getString("rua"));
+					cliente.setCidade		(rs.getString("cidade"));
+					cliente.setNomeContato	(rs.getString("nomeContato"));
+
+					listaCliente.add(cliente);
+				}
+			}
+
+			return listaCliente;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param rua
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Cliente> listarClientesEspecificosRua(String rua, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Cliente WHERE rua = '%" +rua+ "%'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Cliente> listaCliente = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Cliente cliente = new Cliente();
+					
+					cliente.setEstado		(rs.getString("estado"));
+					cliente.setCep		(rs.getString("cep"));
+					cliente.setRazaoSocial	(rs.getString("razaoSocial"));
+					cliente.setCnpj		(rs.getString("cnpj"));
+					cliente.setEmail		(rs.getString("email"));
+					cliente.setTelefone	(rs.getString("telefone"));
+					cliente.setRua		(rs.getString("rua"));
+					cliente.setCidade		(rs.getString("cidade"));
+					cliente.setNomeContato	(rs.getString("nomeContato"));
+
+					listaCliente.add(cliente);
+				}
+			}
+
+			return listaCliente;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param cidade
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Cliente> listarClientesEspecificosCidade(String cidade, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Cliente WHERE cidade = '%" +cidade+ "%'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Cliente> listaCliente = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Cliente cliente = new Cliente();
+					
+					cliente.setEstado		(rs.getString("estado"));
+					cliente.setCep		(rs.getString("cep"));
+					cliente.setRazaoSocial	(rs.getString("razaoSocial"));
+					cliente.setCnpj		(rs.getString("cnpj"));
+					cliente.setEmail		(rs.getString("email"));
+					cliente.setTelefone	(rs.getString("telefone"));
+					cliente.setRua		(rs.getString("rua"));
+					cliente.setCidade		(rs.getString("cidade"));
+					cliente.setNomeContato	(rs.getString("nomeContato"));
+
+					listaCliente.add(cliente);
+				}
+			}
+
+			return listaCliente;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param nomeContato
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Cliente> listarClientesEspecificosNomeContato(String nomeContato, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Cliente WHERE nomeContato = '%" +nomeContato+ "%'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Cliente> listaCliente = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Cliente cliente = new Cliente();
+					
+					cliente.setEstado		(rs.getString("estado"));
+					cliente.setCep		(rs.getString("cep"));
+					cliente.setRazaoSocial	(rs.getString("razaoSocial"));
+					cliente.setCnpj		(rs.getString("cnpj"));
+					cliente.setEmail		(rs.getString("email"));
+					cliente.setTelefone	(rs.getString("telefone"));
+					cliente.setRua		(rs.getString("rua"));
+					cliente.setCidade		(rs.getString("cidade"));
+					cliente.setNomeContato	(rs.getString("nomeContato"));
+
+					listaCliente.add(cliente);
+				}
+			}
+
+			return listaCliente;
+
+		} catch (SQLException e) { return null; }
+	}
 }

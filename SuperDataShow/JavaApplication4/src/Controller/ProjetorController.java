@@ -279,10 +279,438 @@ public class ProjetorController {
 		} catch (SQLException e) { return e.getMessage(); }
 	}
 	
-	public ArrayList<Projetor> ListarTodosProjetores() {
+	/**
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Projetor> listarTodosProjetores() {
 		
-		String SQL = "SELECT * FROM Projetor;";
+		String SQL = "SELECT * FROM Projetor ORDER BY ASC;";
 
+		ArrayList<Projetor> listaProjetor = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Projetor projetor = new Projetor();
+
+					projetor.setMarca			(rs.getString("marca"));
+					projetor.setModelos		(rs.getString("modelo"));
+					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
+					projetor.setDataCompra		(rs.getString("dataCompra"));
+					projetor.setAnsiLumens		(rs.getString("ansiLumens"));
+					projetor.setEstado		(rs.getString("estado"));
+					projetor.setPreco			(rs.getString("preco"));
+					projetor.setNumeroHorasUso	(rs.getString("numeroHorasUso"));
+
+					listaProjetor.add(projetor);
+				}
+			}
+
+			return listaProjetor;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param marca
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Projetor> listarProjetoresEspecificosMarca(String marca, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Projetor WHERE marca LIKE '%" +marca+ "%'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Projetor> listaProjetor = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Projetor projetor = new Projetor();
+
+					projetor.setMarca			(rs.getString("marca"));
+					projetor.setModelos		(rs.getString("modelo"));
+					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
+					projetor.setDataCompra		(rs.getString("dataCompra"));
+					projetor.setAnsiLumens		(rs.getString("ansiLumens"));
+					projetor.setEstado		(rs.getString("estado"));
+					projetor.setPreco			(rs.getString("preco"));
+					projetor.setNumeroHorasUso	(rs.getString("numeroHorasUso"));
+
+					listaProjetor.add(projetor);
+				}
+			}
+
+			return listaProjetor;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param modelo
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Projetor> listarProjetoresEspecificosModelo(String modelo, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Projetor WHERE modelo LIKE '%" +modelo+ "%'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Projetor> listaProjetor = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Projetor projetor = new Projetor();
+
+					projetor.setMarca			(rs.getString("marca"));
+					projetor.setModelos		(rs.getString("modelo"));
+					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
+					projetor.setDataCompra		(rs.getString("dataCompra"));
+					projetor.setAnsiLumens		(rs.getString("ansiLumens"));
+					projetor.setEstado		(rs.getString("estado"));
+					projetor.setPreco			(rs.getString("preco"));
+					projetor.setNumeroHorasUso	(rs.getString("numeroHorasUso"));
+
+					listaProjetor.add(projetor);
+				}
+			}
+
+			return listaProjetor;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param numeroSerie
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Projetor> listarProjetoresEspecificosNumeroSerie(String numeroSerie, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Projetor WHERE numeroSerie LIKE '%" +numeroSerie+ "%'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Projetor> listaProjetor = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Projetor projetor = new Projetor();
+
+					projetor.setMarca			(rs.getString("marca"));
+					projetor.setModelos		(rs.getString("modelo"));
+					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
+					projetor.setDataCompra		(rs.getString("dataCompra"));
+					projetor.setAnsiLumens		(rs.getString("ansiLumens"));
+					projetor.setEstado		(rs.getString("estado"));
+					projetor.setPreco			(rs.getString("preco"));
+					projetor.setNumeroHorasUso	(rs.getString("numeroHorasUso"));
+
+					listaProjetor.add(projetor);
+				}
+			}
+
+			return listaProjetor;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param dataCompra
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Projetor> listarProjetoresEspecificosDataCompra(String dataCompra, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Projetor WHERE dataCompra = '" +formatarData(dataCompra)+ "'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Projetor> listaProjetor = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Projetor projetor = new Projetor();
+
+					projetor.setMarca			(rs.getString("marca"));
+					projetor.setModelos		(rs.getString("modelo"));
+					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
+					projetor.setDataCompra		(rs.getString("dataCompra"));
+					projetor.setAnsiLumens		(rs.getString("ansiLumens"));
+					projetor.setEstado		(rs.getString("estado"));
+					projetor.setPreco			(rs.getString("preco"));
+					projetor.setNumeroHorasUso	(rs.getString("numeroHorasUso"));
+
+					listaProjetor.add(projetor);
+				}
+			}
+
+			return listaProjetor;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param ansiLumens
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Projetor> listarProjetoresEspecificosAnsiLumens(String ansiLumens, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Projetor WHERE ansiLumens LIKE '%" +ansiLumens+ "%'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Projetor> listaProjetor = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Projetor projetor = new Projetor();
+
+					projetor.setMarca			(rs.getString("marca"));
+					projetor.setModelos		(rs.getString("modelo"));
+					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
+					projetor.setDataCompra		(rs.getString("dataCompra"));
+					projetor.setAnsiLumens		(rs.getString("ansiLumens"));
+					projetor.setEstado		(rs.getString("estado"));
+					projetor.setPreco			(rs.getString("preco"));
+					projetor.setNumeroHorasUso	(rs.getString("numeroHorasUso"));
+
+					listaProjetor.add(projetor);
+				}
+			}
+
+			return listaProjetor;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param estado
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Projetor> listarProjetoresEspecificosEstado(String estado, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Projetor WHERE estado LIKE '%" +estado+ "%'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Projetor> listaProjetor = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Projetor projetor = new Projetor();
+
+					projetor.setMarca			(rs.getString("marca"));
+					projetor.setModelos		(rs.getString("modelo"));
+					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
+					projetor.setDataCompra		(rs.getString("dataCompra"));
+					projetor.setAnsiLumens		(rs.getString("ansiLumens"));
+					projetor.setEstado		(rs.getString("estado"));
+					projetor.setPreco			(rs.getString("preco"));
+					projetor.setNumeroHorasUso	(rs.getString("numeroHorasUso"));
+
+					listaProjetor.add(projetor);
+				}
+			}
+
+			return listaProjetor;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param preco
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Projetor> listarProjetoresEspecificosPreco(String preco, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Projetor WHERE preco LIKE '%" +preco+ "%'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Projetor> listaProjetor = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Projetor projetor = new Projetor();
+
+					projetor.setMarca			(rs.getString("marca"));
+					projetor.setModelos		(rs.getString("modelo"));
+					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
+					projetor.setDataCompra		(rs.getString("dataCompra"));
+					projetor.setAnsiLumens		(rs.getString("ansiLumens"));
+					projetor.setEstado		(rs.getString("estado"));
+					projetor.setPreco			(rs.getString("preco"));
+					projetor.setNumeroHorasUso	(rs.getString("numeroHorasUso"));
+
+					listaProjetor.add(projetor);
+				}
+			}
+
+			return listaProjetor;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	*  
+	* @param numeroHorasUso 
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Projetor> listarProjetoresEspecificosNumeroHorasUso(String numeroHorasUso, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Projetor WHERE numeroHorasUso LIKE '%" +numeroHorasUso+ "%'"; 
+
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY DESC";
+		} else {
+			
+			SQL += " ORDER BY ASC";
+		}
+		
+		SQL += ";";
+		
 		ArrayList<Projetor> listaProjetor = new ArrayList();
 		
 		try {
