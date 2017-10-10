@@ -261,7 +261,7 @@ public class LocacaoController {
 		} catch (NumberFormatException | SQLException e) { return e.getMessage(); }
 	}
 	
-	public String excluirLocacao(Locacao locacao, String id) {
+	public String excluirLocacao(String id) {
 
 		String SQL = "DELETE FROM Locacao WHERE idLocacao = '" +Integer.parseInt(id)+ "';";
 

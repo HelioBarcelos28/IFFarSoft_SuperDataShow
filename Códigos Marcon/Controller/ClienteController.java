@@ -261,7 +261,7 @@ public class ClienteController {
 		} catch (SQLException e) { return e.getMessage(); }
 	}
 
-	public String excluirCliente(Cliente cliente, String id) {
+	public String excluirCliente(String id) {
 
 		String SQL = "DELETE FROM Cliente WHERE idCliente = '" +Integer.parseInt(id)+ "';";
 
