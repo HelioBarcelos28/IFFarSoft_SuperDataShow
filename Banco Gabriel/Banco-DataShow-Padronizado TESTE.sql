@@ -13,57 +13,36 @@ nomeContato 		VARCHAR(50) NOT NULL,
 
 CONSTRAINT pk_Cliente_idCliente PRIMARY KEY (idCliente));
 
-INSERT INTO Cliente VALUES (DEFAULT, 'RS', 'cep1', 'razao1', 'cnpj1', 'email1', 'telefone1', 'rua1', 'cidade1', 'nomeContato1');
-INSERT INTO Cliente VALUES (DEFAULT, 'SC', 'cep2', 'razao2', 'cnpj2', 'email2', 'telefone2', 'rua2', 'cidade2', 'nomeContato2');
-INSERT INTO Cliente VALUES (DEFAULT, 'SC', 'cep2', 'razao3', 'cnpj3', 'email3', 'telefone3', 'rua3', 'cidade2', 'nomeContato3');
-INSERT INTO Cliente VALUES (DEFAULT, 'SC', 'cep3', 'razao4', 'cnpj4', 'email4', 'telefone4', 'rua4', 'cidade3', 'nomeContato4');
-INSERT INTO Cliente VALUES (DEFAULT, 'RS', 'cep1', 'razao5', 'cnpj5', 'email5', 'telefone5', 'rua5', 'cidade1', 'nomeContato5');
-
-
 CREATE TABLE Projetor (
 
 idProjetor		SERIAL,
-marca 			VARCHAR(30),
-modelo	 		VARCHAR(40),
-numeroSerie 		VARCHAR(10),
+marca 			VARCHAR(30) NOT NULL,
+modelo	 		VARCHAR(40) NOT NULL,
+numeroSerie 		VARCHAR(10) NOT NULL,
 dataCompra 		DATE,
-ansiLumens 		VARCHAR(5),
+ansiLumens 		VARCHAR(5) NOT NULL,
 estado 			CHAR(2) DEFAULT 'D',
-preco 			NUMERIC(7, 2),
-numeroHorasUso		INTEGER,
+preco 			NUMERIC(7, 2) NOT NULL,
+numeroHorasUso		INTEGER NOT NULL,
 
 CONSTRAINT pk_Projetor_idProjetor PRIMARY KEY (idProjetor),
 CONSTRAINT ck_Projetor_estado CHECK (estado IN ('L', 'M', 'D', 'FE')));
-
-INSERT INTO Projetor VALUES (DEFAULT, 'marca1', 'modelo1', 'numSerie1', '10-05-2017', '?', 'D', 50, 1000);
-INSERT INTO Projetor VALUES (DEFAULT, 'marca2', 'modelo2', 'numSerie2', '10-06-2017', '?', 'D', 40, 1000);
-INSERT INTO Projetor VALUES (DEFAULT, 'marca3', 'modelo3', 'numSerie3', '10-05-2017', '?', 'D', 40, 1000);
-INSERT INTO Projetor VALUES (DEFAULT, 'marca4', 'modelo4', 'numSerie4', '10-05-2017', '?', 'D', 50, 5000);
-INSERT INTO Projetor VALUES (DEFAULT, 'marca1', 'modelo1', 'numSerie5', '10-06-2017', '?', 'D', 50, 1000);
-
 
 CREATE TABLE Locacao (
 
 idLocacao 		SERIAL,
 valorLocacao 		NUMERIC(7, 2) DEFAULT 0,
 dataLocacao 		DATE,
-dataDevolucaoPrevista   DATE,
+dataDevolucaoPrevista   DATE NOT NULL,
 dataDevolucao 		DATE,
 horasUsadas		INTEGER DEFAULT 0,
-idProjetor 		INTEGER,
-idCliente 		INTEGER,
+idProjetor 		INTEGER NOT NULL,
+idCliente 		INTEGER NOT NULL,
 valorMulta 		NUMERIC(7, 2) DEFAULT 0,
 
 CONSTRAINT pk_Locacao_idLocacao PRIMARY KEY (idLocacao),
 CONSTRAINT fk_Cliente_idCliente FOREIGN KEY (idCliente) REFERENCES Cliente(idCliente),
 CONSTRAINT fk_Projetor_idProjetor FOREIGN KEY (idProjetor) REFERENCES Projetor(idProjetor));
-
-
-
-INSERT INTO Locacao VALUES (DEFAULT, 50, CURRENT_DATE, CURRENT_DATE + 3, CURRENT_DATE + 5, DEFAULT, 1, 1, 0);
-INSERT INTO Locacao VALUES (DEFAULT, 50, CURRENT_DATE, CURRENT_DATE + 3, CURRENT_DATE + 5, DEFAULT, 2, 1, 0);
-INSERT INTO Locacao VALUES (DEFAULT, 50, CURRENT_DATE, CURRENT_DATE + 3, CURRENT_DATE + 1, DEFAULT, 3, 1, 0);
-INSERT INTO Locacao VALUES (DEFAULT, 50, CURRENT_DATE, CURRENT_DATE + 3, CURRENT_DATE + 1, DEFAULT, 2, 1, 0);
 
 
 select * from estados;
@@ -124,7 +103,7 @@ FOR EACH ROW EXECUTE PROCEDURE disponds();
 	
 	BEGIN
 		IF((SELECT dataDevolucao FROM Locacao WHERE idLocacao = new.idLocacao) IS NOT NULL AND (SELECT numeroHorasUso FROM Projetor
-			WHERE idProjetor = NEW.idProjetor)  0 ) THEN
+			WHERE idProjetor = NEW.idProjetor) >= 0 ) THEN
 	
 			UPDATE projetor
 			SET estado = 'D' 
@@ -223,16 +202,17 @@ FOR EACH ROW EXECUTE PROCEDURE VetandoLocacao();
 	BEGIN
 
 		IF ((SELECT estado FROM Projetor WHERE idProjetor = NEW.idProjetor) = 'M') THEN
+			
 				RETURN NULL;
-				RAISE NOTICE 'O Projetor está em Manutenção';
-				
 		ELSIF ((SELECT estado FROM Projetor WHERE idProjetor = NEW.idProjetor) = 'L') THEN
+				
 				RETURN NULL;
-				RAISE NOTICE 'O Projetor está Locado';
 		ELSIF ((SELECT estado FROM Projetor WHERE idProjetor = NEW.idProjetor) = 'FE') THEN
+				
 				RETURN NULL;
-				RAISE NOTICE 'O Projetor não se encontra mais no estoque!';
-			END IF;
+		ELSIF (NEW.dataDevolucaoPrevista < CURRENT_DATE) THEN
+				RETURN NULL;
+		END IF;
 		
 		RETURN NEW;
 	END; $VetandoLocacao$ LANGUAGE PLPGSQL; 
@@ -260,3 +240,39 @@ FOR EACH ROW EXECUTE PROCEDURE attDataPrevista();
 		RETURN NEW;
 	END;
 	$attDataPrevista$ LANGUAGE PLPGSQL;
+
+/* datalocacao > dataprevista*/
+CREATE TRIGGER dataLMaiorDataP
+BEFORE UPDATE OF dataDevolucaoPrevista ON locacao
+FOR EACH ROW EXECUTE PROCEDURE dataLMaiorDataP();
+
+	CREATE OR REPLACE FUNCTION dataLMaiorDataP()
+	RETURNS TRIGGER AS $dataLMaiorDataP$
+	DECLARE
+	
+	BEGIN
+		IF(NEW.dataDevolucaoPrevista < NEW.dataLocacao) THEN
+			RETURN NULL;
+		
+		END IF;
+		RETURN NEW;
+	END;
+	$dataLMaiorDataP$ LANGUAGE PLPGSQL;
+
+/* datalocacao > datadevolucao*/
+CREATE TRIGGER dataLMaiorDataD
+BEFORE UPDATE OF dataDevolucao ON locacao
+FOR EACH ROW EXECUTE PROCEDURE dataLMaiorDataD();
+
+	CREATE OR REPLACE FUNCTION dataLMaiorDataD()
+	RETURNS TRIGGER AS $dataLMaiorDataD$
+	DECLARE
+	
+	BEGIN
+		IF(NEW.dataDevolucao < NEW.dataLocacao) THEN
+			RETURN NULL;
+		
+		END IF;
+		RETURN NEW;
+	END;
+	$dataLMaiorDataD$ LANGUAGE PLPGSQL;
