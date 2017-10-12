@@ -32,10 +32,11 @@ public class Main1 extends javax.swing.JFrame {
 
             painelCabecalho = new javax.swing.JPanel();
             labelCentro = new javax.swing.JLabel();
-            jButton1 = new javax.swing.JButton();
+            botaoRetornarTelaInicial = new javax.swing.JButton();
             painelRodape = new javax.swing.JPanel();
             panelRodapeInterno1 = new javax.swing.JPanel();
-            panelRodapeInterno2 = new javax.swing.JPanel();
+            jLabel1 = new javax.swing.JLabel();
+            jPanel1 = new javax.swing.JPanel();
             barraMenu = new javax.swing.JMenuBar();
             menuCadastro = new javax.swing.JMenu();
             menuItemInserirCliente = new javax.swing.JMenuItem();
@@ -53,11 +54,11 @@ public class Main1 extends javax.swing.JFrame {
             labelCentro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/projector_white.png"))); // NOI18N
             labelCentro.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-            jButton1.setBackground(new java.awt.Color(0, 0, 51));
-            jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/menu_white.png"))); // NOI18N
-            jButton1.addActionListener(new java.awt.event.ActionListener() {
+            botaoRetornarTelaInicial.setBackground(new java.awt.Color(0, 0, 51));
+            botaoRetornarTelaInicial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/menu_white.png"))); // NOI18N
+            botaoRetornarTelaInicial.addActionListener(new java.awt.event.ActionListener() {
                   public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        jButton1ActionPerformed(evt);
+                        botaoRetornarTelaInicialActionPerformed(evt);
                   }
             });
 
@@ -67,17 +68,17 @@ public class Main1 extends javax.swing.JFrame {
                   painelCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelCabecalhoLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(363, 363, 363)
+                        .addComponent(botaoRetornarTelaInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(346, 346, 346)
                         .addComponent(labelCentro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(418, 418, 418))
+                        .addGap(435, 435, 435))
             );
             painelCabecalhoLayout.setVerticalGroup(
                   painelCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addComponent(labelCentro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                   .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelCabecalhoLayout.createSequentialGroup()
                         .addContainerGap(30, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(botaoRetornarTelaInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30))
             );
 
@@ -85,35 +86,44 @@ public class Main1 extends javax.swing.JFrame {
 
             panelRodapeInterno1.setBackground(new java.awt.Color(0, 204, 204));
 
-            panelRodapeInterno2.setBackground(new java.awt.Color(36, 46, 68));
-            panelRodapeInterno2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+            jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/projector.png"))); // NOI18N
+            jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-            javax.swing.GroupLayout panelRodapeInterno2Layout = new javax.swing.GroupLayout(panelRodapeInterno2);
-            panelRodapeInterno2.setLayout(panelRodapeInterno2Layout);
-            panelRodapeInterno2Layout.setHorizontalGroup(
-                  panelRodapeInterno2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGap(0, 0, Short.MAX_VALUE)
+            jPanel1.setBackground(new java.awt.Color(36, 46, 68));
+            jPanel1.setPreferredSize(new java.awt.Dimension(684, 0));
+
+            javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+            jPanel1.setLayout(jPanel1Layout);
+            jPanel1Layout.setHorizontalGroup(
+                  jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGap(0, 684, Short.MAX_VALUE)
             );
-            panelRodapeInterno2Layout.setVerticalGroup(
-                  panelRodapeInterno2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGap(0, 332, Short.MAX_VALUE)
+            jPanel1Layout.setVerticalGroup(
+                  jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGap(0, 0, Short.MAX_VALUE)
             );
 
             javax.swing.GroupLayout panelRodapeInterno1Layout = new javax.swing.GroupLayout(panelRodapeInterno1);
             panelRodapeInterno1.setLayout(panelRodapeInterno1Layout);
             panelRodapeInterno1Layout.setHorizontalGroup(
                   panelRodapeInterno1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRodapeInterno1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(panelRodapeInterno2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                  .addGroup(panelRodapeInterno1Layout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(136, 136, 136)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
             );
             panelRodapeInterno1Layout.setVerticalGroup(
                   panelRodapeInterno1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(panelRodapeInterno1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(panelRodapeInterno2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
                         .addContainerGap())
+                  .addGroup(panelRodapeInterno1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 24, Short.MAX_VALUE))
             );
 
             javax.swing.GroupLayout painelRodapeLayout = new javax.swing.GroupLayout(painelRodape);
@@ -180,10 +190,10 @@ public class Main1 extends javax.swing.JFrame {
             pack();
       }// </editor-fold>//GEN-END:initComponents
 
-      private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      private void botaoRetornarTelaInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRetornarTelaInicialActionPerformed
             // TODO add your handling code here:
             
-      }//GEN-LAST:event_jButton1ActionPerformed
+      }//GEN-LAST:event_botaoRetornarTelaInicialActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -222,7 +232,9 @@ public class Main1 extends javax.swing.JFrame {
 
       // Variables declaration - do not modify//GEN-BEGIN:variables
       private javax.swing.JMenuBar barraMenu;
-      private javax.swing.JButton jButton1;
+      private javax.swing.JButton botaoRetornarTelaInicial;
+      private javax.swing.JLabel jLabel1;
+      private javax.swing.JPanel jPanel1;
       private javax.swing.JLabel labelCentro;
       private javax.swing.JMenu menuAjuda;
       private javax.swing.JMenu menuCadastro;
@@ -234,6 +246,5 @@ public class Main1 extends javax.swing.JFrame {
       private javax.swing.JPanel painelCabecalho;
       private javax.swing.JPanel painelRodape;
       private javax.swing.JPanel panelRodapeInterno1;
-      private javax.swing.JPanel panelRodapeInterno2;
       // End of variables declaration//GEN-END:variables
 }
