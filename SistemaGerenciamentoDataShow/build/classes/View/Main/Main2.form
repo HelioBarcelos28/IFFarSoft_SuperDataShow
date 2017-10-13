@@ -26,6 +26,81 @@
             </MenuItem>
           </SubComponents>
         </Menu>
+        <Menu class="javax.swing.JMenu" name="menuEdicao">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Edi&#xe7;&#xe3;o"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="menuEdicaoClientes">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Clientes"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuEdicaoProjetores">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Projetores"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuEdicaoProjetoresActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuEdicaoLocacoes">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="menuListagem">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Listagem"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="menuListagemClientes">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Clientes"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuListagemProjetores">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Projetores"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuListagemLocacoes">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="menuExclusao">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Exclus&#xe3;o"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="menuExclusaoClientes">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Clientes"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuExclusaoClientesActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuExclusaoProjetores">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Projetores"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuExclusaoLocacao">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuExclusaoLocacaoActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
         <Menu class="javax.swing.JMenu" name="menuAjuda">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ajuda"/>
@@ -249,12 +324,12 @@
                           <Group type="102" attributes="0">
                               <EmptySpace pref="99" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                      <Component id="painelCorpo2LabelTitulo" min="-2" max="-2" attributes="0"/>
-                                      <Group type="102" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="painelCorpo2LabelTitulo" min="-2" max="-2" attributes="0"/>
                                           <Component id="painelCorpo2LabelMensagem1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                                       </Group>
+                                      <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="painelCorpo2LabelImagemCasa" min="-2" max="-2" attributes="0"/>
