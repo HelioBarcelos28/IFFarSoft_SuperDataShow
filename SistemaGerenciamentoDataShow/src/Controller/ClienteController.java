@@ -645,4 +645,52 @@ public class ClienteController {
 
 		} catch (SQLException e) { return null; }
 	}
+	
+	public ArrayList<String> listarEstados() {
+		
+		String SQL = "SELECT nome FROM Estado ORDER BY nome ASC;";
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			ArrayList<String> estados = new ArrayList();
+			
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					estados.add(rs.getString("nome"));
+				}
+			}
+
+			return estados;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	public ArrayList<String> listarCidades() {
+		
+		String SQL = "SELECT nome FROM Cidade ORDER BY nome ASC;";
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			ArrayList<String> estados = new ArrayList();
+			
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					estados.add(rs.getString("nome"));
+				}
+			}
+
+			return estados;
+
+		} catch (SQLException e) { return null; }
+	}
 }

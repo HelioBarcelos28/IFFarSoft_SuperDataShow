@@ -5,6 +5,7 @@
  */
 package View.Main;
 
+import View.Cliente.inserirCliente1;
 import javax.swing.JPanel;
 
 /**
@@ -19,13 +20,16 @@ public class Main2 extends javax.swing.JFrame {
 	public Main2() {
 		initComponents();
 	}
-	
+
 	private void navegarEntreTelas(JPanel painel) {
-		
+
 		painelCorpo.removeAll();
 		javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(painelCorpo);
 		painelCorpo.setLayout(jPanel1Layout);
-		
+		jPanel1Layout.setHorizontalGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				 .addComponent(painel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+		jPanel1Layout.setVerticalGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				 .addComponent(painel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 	}
 
 	/**
@@ -174,7 +178,7 @@ public class Main2 extends javax.swing.JFrame {
                                     .addComponent(painelCorpo1LabelImagemCorcao, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(painelCorpo1LabelMensagem2)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
                         .addComponent(painelCorpo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
             );
@@ -236,6 +240,11 @@ public class Main2 extends javax.swing.JFrame {
             menuCadastrar.setText("Cadastro");
 
             menuCadastrarClientes.setText("Clientes");
+            menuCadastrarClientes.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        menuCadastrarClientesActionPerformed(evt);
+                  }
+            });
             menuCadastrar.add(menuCadastrarClientes);
 
             menuCadastrarProjetores.setText("Projetores");
@@ -324,16 +333,21 @@ public class Main2 extends javax.swing.JFrame {
       }// </editor-fold>//GEN-END:initComponents
 
       private void menuEdicaoProjetoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuEdicaoProjetoresActionPerformed
-            // TODO add your handling code here:
+		// TODO add your handling code here:
       }//GEN-LAST:event_menuEdicaoProjetoresActionPerformed
 
       private void menuExclusaoClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuExclusaoClientesActionPerformed
-            // TODO add your handling code here:
+		// TODO add your handling code here:
       }//GEN-LAST:event_menuExclusaoClientesActionPerformed
 
       private void menuExclusaoLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuExclusaoLocacaoActionPerformed
-            // TODO add your handling code here:
+		// TODO add your handling code here:
       }//GEN-LAST:event_menuExclusaoLocacaoActionPerformed
+
+      private void menuCadastrarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastrarClientesActionPerformed
+		
+		navegarEntreTelas(new inserirCliente1());
+      }//GEN-LAST:event_menuCadastrarClientesActionPerformed
 
 	/**
 	 * @param args the command line arguments
