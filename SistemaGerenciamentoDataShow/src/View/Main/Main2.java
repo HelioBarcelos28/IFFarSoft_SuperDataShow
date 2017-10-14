@@ -5,6 +5,7 @@
  */
 package View.Main;
 
+import View.Cliente.alterarCliente1;
 import View.Cliente.excluirCliente1;
 import View.Cliente.inserirCliente1;
 import View.Cliente.listarCliente1;
@@ -63,6 +64,7 @@ public class Main2 extends javax.swing.JFrame {
         menuEdicaoClientes = new javax.swing.JMenuItem();
         menuEdicaoProjetores = new javax.swing.JMenuItem();
         menuEdicaoLocacoes = new javax.swing.JMenuItem();
+        menuEdicaoClientes1 = new javax.swing.JMenuItem();
         menuListagem = new javax.swing.JMenu();
         menuListagemClientes = new javax.swing.JMenuItem();
         menuListagemProjetores = new javax.swing.JMenuItem();
@@ -179,6 +181,14 @@ public class Main2 extends javax.swing.JFrame {
 
         menuEdicaoLocacoes.setText("Locações");
         menuEdicao.add(menuEdicaoLocacoes);
+
+        menuEdicaoClientes1.setText("Clientes (helio)");
+        menuEdicaoClientes1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuEdicaoClientes1ActionPerformed(evt);
+            }
+        });
+        menuEdicao.add(menuEdicaoClientes1);
 
         barraMenu.add(menuEdicao);
 
@@ -299,6 +309,11 @@ public class Main2 extends javax.swing.JFrame {
         navegarEntreTelas(new excluirCliente1());
     }//GEN-LAST:event_menuExclusaoClientes1ActionPerformed
 
+    private void menuEdicaoClientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuEdicaoClientes1ActionPerformed
+        // TODO add your handling code here:
+        navegarEntreTelas(new alterarCliente1());
+    }//GEN-LAST:event_menuEdicaoClientes1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -344,6 +359,7 @@ public class Main2 extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuCadastrarProjetores;
     private javax.swing.JMenu menuEdicao;
     private javax.swing.JMenuItem menuEdicaoClientes;
+    private javax.swing.JMenuItem menuEdicaoClientes1;
     private javax.swing.JMenuItem menuEdicaoLocacoes;
     private javax.swing.JMenuItem menuEdicaoProjetores;
     private javax.swing.JMenu menuExclusao;
