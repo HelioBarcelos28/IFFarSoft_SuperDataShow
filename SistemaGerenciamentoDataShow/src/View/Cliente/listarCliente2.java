@@ -18,6 +18,7 @@ import java.sql.Connection;
 import java.util.List;
 import javax.swing.AbstractAction;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 import javax.swing.table.DefaultTableModel;
@@ -26,12 +27,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author LucasMarcon
  */
-public class listarCliente1 extends javax.swing.JPanel {
+public class listarCliente2 extends javax.swing.JPanel {
 
 	/**
 	 * Creates new form listarCliente1
 	 */
-	public listarCliente1() {
+	public listarCliente2() {
 
 		initComponents();
 
@@ -39,6 +40,7 @@ public class listarCliente1 extends javax.swing.JPanel {
 		jSeparator2.setVisible(false);
 
 	}
+      
 
 	/**
 	 * This method is called from within the
@@ -53,44 +55,50 @@ public class listarCliente1 extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         labelTitulo = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        textFieldIdCliente = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableCliente = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        textFieldNomeContato = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        textFieldRazaoSocial = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        textFieldCnpj = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        textFieldEmail = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel8 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        textFieldTelefone = new javax.swing.JTextField();
         jSeparator7 = new javax.swing.JSeparator();
         jLabel9 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        textFieldEstado = new javax.swing.JTextField();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel10 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        textFieldCidade = new javax.swing.JTextField();
         jSeparator9 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        textFieldCep = new javax.swing.JTextField();
         jSeparator10 = new javax.swing.JSeparator();
         jLabel12 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        textFieldRua = new javax.swing.JTextField();
         jSeparator11 = new javax.swing.JSeparator();
+        jButtonBusca = new javax.swing.JButton();
+        botaoLimparBusca = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(0, 153, 153));
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.setPreferredSize(new java.awt.Dimension(950, 400));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         labelTitulo.setBackground(new java.awt.Color(224, 224, 224));
@@ -99,11 +107,11 @@ public class listarCliente1 extends javax.swing.JPanel {
         labelTitulo.setText("Listagem de Clientes");
         jPanel1.add(labelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, -1, -1));
 
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(0, 153, 153));
-        jTextField1.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
-        jTextField1.setBorder(null);
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 100, 230, -1));
+        textFieldIdCliente.setEditable(false);
+        textFieldIdCliente.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldIdCliente.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
+        textFieldIdCliente.setBorder(null);
+        jPanel1.add(textFieldIdCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 100, 230, -1));
 
         jComboBox1.setBackground(new java.awt.Color(0, 153, 153));
         jComboBox1.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
@@ -118,7 +126,7 @@ public class listarCliente1 extends javax.swing.JPanel {
         jSeparator1.setBackground(new java.awt.Color(224, 224, 224));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 120, 230, 10));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -134,12 +142,12 @@ public class listarCliente1 extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jTableCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1MouseClicked(evt);
+                jTableClienteMouseClicked(evt);
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTableCliente);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 490, 250));
 
@@ -168,11 +176,11 @@ public class listarCliente1 extends javax.swing.JPanel {
         jLabel4.setText("Nome: ");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 130, -1, -1));
 
-        jTextField3.setEditable(false);
-        jTextField3.setBackground(new java.awt.Color(0, 153, 153));
-        jTextField3.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
-        jTextField3.setBorder(null);
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 130, 230, -1));
+        textFieldNomeContato.setEditable(false);
+        textFieldNomeContato.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldNomeContato.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
+        textFieldNomeContato.setBorder(null);
+        jPanel1.add(textFieldNomeContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 130, 230, -1));
 
         jSeparator3.setBackground(new java.awt.Color(224, 224, 224));
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 150, 230, 10));
@@ -181,11 +189,11 @@ public class listarCliente1 extends javax.swing.JPanel {
         jLabel5.setText("Razão: ");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 160, -1, -1));
 
-        jTextField4.setEditable(false);
-        jTextField4.setBackground(new java.awt.Color(0, 153, 153));
-        jTextField4.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
-        jTextField4.setBorder(null);
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 160, 230, -1));
+        textFieldRazaoSocial.setEditable(false);
+        textFieldRazaoSocial.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldRazaoSocial.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
+        textFieldRazaoSocial.setBorder(null);
+        jPanel1.add(textFieldRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 160, 230, -1));
 
         jSeparator4.setBackground(new java.awt.Color(224, 224, 224));
         jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 180, 230, 10));
@@ -194,11 +202,11 @@ public class listarCliente1 extends javax.swing.JPanel {
         jLabel6.setText("Cnpj: ");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 190, -1, -1));
 
-        jTextField5.setEditable(false);
-        jTextField5.setBackground(new java.awt.Color(0, 153, 153));
-        jTextField5.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
-        jTextField5.setBorder(null);
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 190, 230, -1));
+        textFieldCnpj.setEditable(false);
+        textFieldCnpj.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldCnpj.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
+        textFieldCnpj.setBorder(null);
+        jPanel1.add(textFieldCnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 190, 230, -1));
 
         jSeparator5.setBackground(new java.awt.Color(224, 224, 224));
         jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 210, 230, 10));
@@ -207,11 +215,11 @@ public class listarCliente1 extends javax.swing.JPanel {
         jLabel7.setText("E-mail: ");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, -1, -1));
 
-        jTextField6.setEditable(false);
-        jTextField6.setBackground(new java.awt.Color(0, 153, 153));
-        jTextField6.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
-        jTextField6.setBorder(null);
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 220, 230, -1));
+        textFieldEmail.setEditable(false);
+        textFieldEmail.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldEmail.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
+        textFieldEmail.setBorder(null);
+        jPanel1.add(textFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 220, 230, -1));
 
         jSeparator6.setBackground(new java.awt.Color(224, 224, 224));
         jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 240, 230, 10));
@@ -220,11 +228,11 @@ public class listarCliente1 extends javax.swing.JPanel {
         jLabel8.setText("Tel: ");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 250, -1, -1));
 
-        jTextField7.setEditable(false);
-        jTextField7.setBackground(new java.awt.Color(0, 153, 153));
-        jTextField7.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
-        jTextField7.setBorder(null);
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 250, 230, -1));
+        textFieldTelefone.setEditable(false);
+        textFieldTelefone.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldTelefone.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
+        textFieldTelefone.setBorder(null);
+        jPanel1.add(textFieldTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 250, 230, -1));
 
         jSeparator7.setBackground(new java.awt.Color(224, 224, 224));
         jPanel1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 270, 230, 10));
@@ -233,11 +241,11 @@ public class listarCliente1 extends javax.swing.JPanel {
         jLabel9.setText("Estado: ");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 280, -1, -1));
 
-        jTextField8.setEditable(false);
-        jTextField8.setBackground(new java.awt.Color(0, 153, 153));
-        jTextField8.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
-        jTextField8.setBorder(null);
-        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 280, 230, -1));
+        textFieldEstado.setEditable(false);
+        textFieldEstado.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldEstado.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
+        textFieldEstado.setBorder(null);
+        jPanel1.add(textFieldEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 280, 230, -1));
 
         jSeparator8.setBackground(new java.awt.Color(224, 224, 224));
         jPanel1.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 300, 230, 10));
@@ -246,11 +254,11 @@ public class listarCliente1 extends javax.swing.JPanel {
         jLabel10.setText("Cidade: ");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 310, -1, -1));
 
-        jTextField9.setEditable(false);
-        jTextField9.setBackground(new java.awt.Color(0, 153, 153));
-        jTextField9.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
-        jTextField9.setBorder(null);
-        jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 310, 230, -1));
+        textFieldCidade.setEditable(false);
+        textFieldCidade.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldCidade.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
+        textFieldCidade.setBorder(null);
+        jPanel1.add(textFieldCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 310, 230, -1));
 
         jSeparator9.setBackground(new java.awt.Color(224, 224, 224));
         jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 330, 230, 10));
@@ -259,11 +267,11 @@ public class listarCliente1 extends javax.swing.JPanel {
         jLabel11.setText("Cep: ");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 340, -1, -1));
 
-        jTextField10.setEditable(false);
-        jTextField10.setBackground(new java.awt.Color(0, 153, 153));
-        jTextField10.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
-        jTextField10.setBorder(null);
-        jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 340, 230, -1));
+        textFieldCep.setEditable(false);
+        textFieldCep.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldCep.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
+        textFieldCep.setBorder(null);
+        jPanel1.add(textFieldCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 340, 230, -1));
 
         jSeparator10.setBackground(new java.awt.Color(224, 224, 224));
         jPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 360, 230, 10));
@@ -272,27 +280,48 @@ public class listarCliente1 extends javax.swing.JPanel {
         jLabel12.setText("Rua: ");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 370, -1, -1));
 
-        jTextField11.setEditable(false);
-        jTextField11.setBackground(new java.awt.Color(0, 153, 153));
-        jTextField11.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
-        jTextField11.setBorder(null);
-        jPanel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, 230, -1));
+        textFieldRua.setEditable(false);
+        textFieldRua.setBackground(new java.awt.Color(0, 153, 153));
+        textFieldRua.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
+        textFieldRua.setBorder(null);
+        jPanel1.add(textFieldRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 370, 230, -1));
 
         jSeparator11.setBackground(new java.awt.Color(224, 224, 224));
         jPanel1.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 390, 230, 10));
+
+        jButtonBusca.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jButtonBusca.setText("Nova Busca");
+        jButtonBusca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuscaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonBusca, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 160, 40));
+
+        botaoLimparBusca.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        botaoLimparBusca.setText("Limpar Pesquisa");
+        botaoLimparBusca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoLimparBuscaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(botaoLimparBusca, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 420, 160, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 982, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -370,7 +399,7 @@ public class listarCliente1 extends javax.swing.JPanel {
 						JOptionPane.showMessageDialog(null, "Não existem dados para essa busca");
 					} else {
 
-						DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
+						DefaultTableModel dtm = (DefaultTableModel) jTableCliente.getModel();
 						for (int i = dtm.getRowCount(); i > 0; i--) {
 
 							dtm.removeRow(i - 1);
@@ -421,32 +450,65 @@ public class listarCliente1 extends javax.swing.JPanel {
 		f1.getActionMap().put("acaoF1", acaoF1);
       }//GEN-LAST:event_jTextField2KeyPressed
 	
-      private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+      private void jTableClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableClienteMouseClicked
 
-		int[] linha = jTable1.getSelectedRows();
+		int[] linha = jTableCliente.getSelectedRows();
 
 		if (linha.length == 1) {
 
 			try {
 
-				jTextField1.setText(jTable1.getValueAt(linha[0], 0) + "");
-				jTextField3.setText(jTable1.getValueAt(linha[0], 1) + "");
-				jTextField4.setText(jTable1.getValueAt(linha[0], 2) + "");
-				jTextField5.setText(jTable1.getValueAt(linha[0], 3) + "");
-				jTextField6.setText(jTable1.getValueAt(linha[0], 4) + "");
-				jTextField7.setText(jTable1.getValueAt(linha[0], 5) + "");
-				jTextField8.setText(jTable1.getValueAt(linha[0], 6) + "");
-				jTextField9.setText(jTable1.getValueAt(linha[0], 7) + "");
-				jTextField10.setText(jTable1.getValueAt(linha[0], 8) + "");
-				jTextField11.setText(jTable1.getValueAt(linha[0], 9) + "");
+				textFieldIdCliente.setText(jTableCliente.getValueAt(linha[0], 0) + "");
+				textFieldNomeContato.setText(jTableCliente.getValueAt(linha[0], 1) + "");
+				textFieldRazaoSocial.setText(jTableCliente.getValueAt(linha[0], 2) + "");
+				textFieldCnpj.setText(jTableCliente.getValueAt(linha[0], 3) + "");
+				textFieldEmail.setText(jTableCliente.getValueAt(linha[0], 4) + "");
+				textFieldTelefone.setText(jTableCliente.getValueAt(linha[0], 5) + "");
+				textFieldEstado.setText(jTableCliente.getValueAt(linha[0], 6) + "");
+				textFieldCidade.setText(jTableCliente.getValueAt(linha[0], 7) + "");
+				textFieldCep.setText(jTableCliente.getValueAt(linha[0], 8) + "");
+				textFieldRua.setText(jTableCliente.getValueAt(linha[0], 9) + "");
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null, "Erro ao popular tabela! " + e.getMessage());
 			}
 		}
-      }//GEN-LAST:event_jTable1MouseClicked
+      }//GEN-LAST:event_jTableClienteMouseClicked
+
+    private void jButtonBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuscaActionPerformed
+        // TODO add your handling code here:
+        
+         //navegarEntreTelas(new listarCliente2());
+         jComboBox1.setVisible(true);
+         jTextField2.setVisible(false);
+	jSeparator2.setVisible(false);
+         
+       
+    }//GEN-LAST:event_jButtonBuscaActionPerformed
+
+    private void botaoLimparBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLimparBuscaActionPerformed
+        jTextField2.setText("");
+        DefaultTableModel dtm = (DefaultTableModel) jTableCliente.getModel();
+        for (int i = dtm.getRowCount(); i > 0; i--) {
+            dtm.removeRow(i - 1);
+        }
+        textFieldCep.setText("");
+        textFieldCnpj.setText("");
+        textFieldEmail.setText("");
+        textFieldIdCliente.setText("");
+        textFieldRazaoSocial.setText("");
+        textFieldEstado.setText("");
+        textFieldTelefone.setText("");
+        textFieldEstado.setText("");
+        textFieldCidade.setText("");
+        textFieldNomeContato.setText("");
+        textFieldRua.setText("");
+       
+    }//GEN-LAST:event_botaoLimparBuscaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoLimparBusca;
+    private javax.swing.JButton jButtonBusca;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -472,18 +534,19 @@ public class listarCliente1 extends javax.swing.JPanel {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
+    private javax.swing.JTable jTableCliente;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel labelTitulo;
+    private javax.swing.JTextField textFieldCep;
+    private javax.swing.JTextField textFieldCidade;
+    private javax.swing.JTextField textFieldCnpj;
+    private javax.swing.JTextField textFieldEmail;
+    private javax.swing.JTextField textFieldEstado;
+    private javax.swing.JTextField textFieldIdCliente;
+    private javax.swing.JTextField textFieldNomeContato;
+    private javax.swing.JTextField textFieldRazaoSocial;
+    private javax.swing.JTextField textFieldRua;
+    private javax.swing.JTextField textFieldTelefone;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -77,6 +77,14 @@
                 <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es"/>
               </Properties>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuListagemClientes1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Clientes (helio)"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuListagemClientes1ActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuExclusao">

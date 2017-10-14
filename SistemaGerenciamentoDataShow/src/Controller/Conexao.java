@@ -24,7 +24,7 @@ public class Conexao {
 
 			String url		= "jdbc:postgresql://localhost:5432/dataShow";
 			String usuario	= "postgres";
-			String senha	= "lucas";
+			String senha	= "helio";
 
 			con = DriverManager.getConnection(url, usuario, senha);
 		} catch (SQLException | ClassNotFoundException | IllegalAccessException | InstantiationException e) {
