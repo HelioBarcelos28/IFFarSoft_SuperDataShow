@@ -6,6 +6,7 @@
 package View.Main;
 
 import View.Cliente.inserirCliente1;
+import View.Cliente.listarCliente1;
 import javax.swing.JPanel;
 
 /**
@@ -179,6 +180,11 @@ public class Main2 extends javax.swing.JFrame {
             menuListagem.setText("Listagem");
 
             menuListagemClientes.setText("Clientes");
+            menuListagemClientes.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        menuListagemClientesActionPerformed(evt);
+                  }
+            });
             menuListagem.add(menuListagemClientes);
 
             menuListagemProjetores.setText("Projetores");
@@ -254,9 +260,13 @@ public class Main2 extends javax.swing.JFrame {
 
       private void painelCabecalhoBotaoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_painelCabecalhoBotaoMenuActionPerformed
 	
-		// TODO - fazer a tela voltar a tela inicial
 		navegarEntreTelas(new painelCorpo());
       }//GEN-LAST:event_painelCabecalhoBotaoMenuActionPerformed
+
+      private void menuListagemClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuListagemClientesActionPerformed
+            
+		navegarEntreTelas(new listarCliente1());
+      }//GEN-LAST:event_menuListagemClientesActionPerformed
 
 	/**
 	 * @param args the command line arguments
