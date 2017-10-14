@@ -570,6 +570,7 @@ public class listarCliente extends javax.swing.JPanel {
 	    int[] l = jTable3.getSelectedRows();
 
 	    if (l.length == 1) {
+		    
 		    try {
 
 			    jTextFieldIdcliente.setText(jTable3.getValueAt(l[0], 0) + "");
@@ -587,8 +588,6 @@ public class listarCliente extends javax.swing.JPanel {
 			    JOptionPane.showMessageDialog(null, "Ocorreu um erro \n" + e.getMessage());
 		    }
 	    }
-
-	    // TODO add your handling code here:
     }//GEN-LAST:event_jTable3MouseClicked
 
     private void jTable3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable3KeyReleased

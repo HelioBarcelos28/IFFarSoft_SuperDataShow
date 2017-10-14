@@ -8,13 +8,15 @@ package View.Cliente;
 import Controller.ClienteController;
 import Controller.Conexao;
 import Model.Cliente;
+import java.awt.Color;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.util.List;
 import javax.swing.AbstractAction;
-import javax.swing.Action;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.KeyStroke;
@@ -304,9 +306,11 @@ public class listarCliente1 extends javax.swing.JPanel {
 		}
       }//GEN-LAST:event_jComboBox1ActionPerformed
 
+	/* Essa função ao pressionar Enter depois de digitar no campo de texto para fazer uma busca, retorna uma lista ou vazio caso não haja resultados
+	   Para retornar ao ComboBox de seleção de diferentes tipos de busca, basta pressionar F1 no teclado.*/
       private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
 
-		AbstractAction facaAlgo = new AbstractAction() {
+		AbstractAction acaoEnter = new AbstractAction() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -315,64 +319,129 @@ public class listarCliente1 extends javax.swing.JPanel {
 
 					Connection con = new Conexao().AbrirConexao();
 					ClienteController cc = new ClienteController(con);
+					List<Cliente> cliente = null;
 
-					List<Cliente> cliente = (jTextField2.getText().equals("")) ? cc.listarTodosClientes() : cc.listarClientesEspecificosRazaoSocial(jTextField2.getText(), 0);
+					switch (jComboBox1.getSelectedItem().toString()) {
 
-					DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
-					for (int i = dtm.getRowCount(); i > 0; i--) {
+						case "": case "ID":
 
-						dtm.removeRow(i - 1);
+							cliente = cc.listarTodosClientes();
+							break;
+						case "Nome":
+
+							cliente = cc.listarClientesEspecificosNomeContato(jTextField2.getText(), 0);
+							break;
+						case "Estado":
+
+							cliente = cc.listarClientesEspecificosEstado(jTextField2.getText(), 0);
+							break;
+						case "Cep":
+
+							cliente = cc.listarClientesEspecificosCep(jTextField2.getText(), 0);
+							break;
+						case "Razão Social":
+
+							cliente = cc.listarClientesEspecificosRazaoSocial(jTextField2.getText(), 0);
+							break;
+						case "CNPJ":
+
+							cliente = cc.listarClientesEspecificosCnpj(jTextField2.getText(), 0);
+							break;
+						case "E-mail":
+
+							cliente = cc.listarClientesEspecificosEmail(jTextField2.getText(), 0);
+							break;
+						case "Telefone":
+
+							cliente = cc.listarClientesEspecificosTelefone(jTextField2.getText(), 0);
+							break;
+						case "Rua":
+
+							cliente = cc.listarClientesEspecificosRua(jTextField2.getText(), 0);
+							break;
+						case "Cidade":
+
+							cliente = cc.listarClientesEspecificosCidade(jTextField2.getText(), 0);
+							break;
 					}
 
 					if (cliente.isEmpty()) {
 
 						JOptionPane.showMessageDialog(null, "Não existem dados para essa busca");
+					} else {
+
+						DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
+						for (int i = dtm.getRowCount(); i > 0; i--) {
+
+							dtm.removeRow(i - 1);
+						}
+
+						for (int i = 0; i < cliente.size(); i++) {
+
+							dtm.addRow(new Object[]{
+								cliente.get(i).getIdCliente(),
+								cliente.get(i).getNomeContato(),
+								cliente.get(i).getRazaoSocial(),
+								cliente.get(i).getCnpj(),
+								cliente.get(i).getEmail(),
+								cliente.get(i).getTelefone(),
+								cliente.get(i).getEstado(),
+								cliente.get(i).getCidade(),
+								cliente.get(i).getCep(),
+								cliente.get(i).getRua(),});
+						}
+						
+						jTextField2.setText("");
 					}
 
-					for (int i = 0; i < cliente.size(); i++) {
-
-						dtm.addRow(new Object[]{
-							cliente.get(i).getIdCliente(),
-							cliente.get(i).getNomeContato(),
-							cliente.get(i).getRazaoSocial(),
-							cliente.get(i).getCnpj(),
-							cliente.get(i).getEmail(),
-							cliente.get(i).getTelefone(),
-							cliente.get(i).getEstado(),
-							cliente.get(i).getCidade(),
-							cliente.get(i).getCep(),
-							cliente.get(i).getRua(),});
-					}
 				} catch (HeadlessException ex) {
+					
 					JOptionPane.showMessageDialog(null, ex.getMessage());
 				}
 			}
 		};
-
-		JTextField txt = jTextField2;
-		txt.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "facaAlgo");
-		txt.getActionMap().put("facaAlgo", facaAlgo);
-      }//GEN-LAST:event_jTextField2KeyPressed
-
-      private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-            
-		int[] linha = jTable1.getSelectedRows();
 		
-		if (linha.length == 1) {
-			
-			try {
+		AbstractAction acaoF1 = new AbstractAction() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
 				
-				jTextField1.setText(jTable1.getValueAt(linha[0], 0)+ "");
-				jTextField3.setText(jTable1.getValueAt(linha[0], 1)+ "");
-				jTextField4.setText(jTable1.getValueAt(linha[0], 2)+ "");
-				jTextField5.setText(jTable1.getValueAt(linha[0], 3)+ "");
-				jTextField6.setText(jTable1.getValueAt(linha[0], 4)+ "");
-				jTextField7.setText(jTable1.getValueAt(linha[0], 5)+ "");
-				jTextField8.setText(jTable1.getValueAt(linha[0], 6)+ "");
-				jTextField9.setText(jTable1.getValueAt(linha[0], 7)+ "");
-				jTextField10.setText(jTable1.getValueAt(linha[0], 8)+ "");
-				jTextField11.setText(jTable1.getValueAt(linha[0], 9)+ "");
-			} catch (Exception e) { JOptionPane.showMessageDialog(null, "Erro ao popular tabela! " + e.getMessage()); }
+				jComboBox1.setVisible(true);
+				jTextField2.setVisible(false);
+				jSeparator2.setVisible(false);
+			}
+		};
+
+		JTextField enter = jTextField2;
+		enter.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "acaoEnter");
+		enter.getActionMap().put("acaoEnter", acaoEnter);
+		
+		JTextField f1 = jTextField2;
+		f1.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0), "acaoF1");
+		f1.getActionMap().put("acaoF1", acaoF1);
+      }//GEN-LAST:event_jTextField2KeyPressed
+	
+      private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+
+		int[] linha = jTable1.getSelectedRows();
+
+		if (linha.length == 1) {
+
+			try {
+
+				jTextField1.setText(jTable1.getValueAt(linha[0], 0) + "");
+				jTextField3.setText(jTable1.getValueAt(linha[0], 1) + "");
+				jTextField4.setText(jTable1.getValueAt(linha[0], 2) + "");
+				jTextField5.setText(jTable1.getValueAt(linha[0], 3) + "");
+				jTextField6.setText(jTable1.getValueAt(linha[0], 4) + "");
+				jTextField7.setText(jTable1.getValueAt(linha[0], 5) + "");
+				jTextField8.setText(jTable1.getValueAt(linha[0], 6) + "");
+				jTextField9.setText(jTable1.getValueAt(linha[0], 7) + "");
+				jTextField10.setText(jTable1.getValueAt(linha[0], 8) + "");
+				jTextField11.setText(jTable1.getValueAt(linha[0], 9) + "");
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null, "Erro ao popular tabela! " + e.getMessage());
+			}
 		}
       }//GEN-LAST:event_jTable1MouseClicked
 
