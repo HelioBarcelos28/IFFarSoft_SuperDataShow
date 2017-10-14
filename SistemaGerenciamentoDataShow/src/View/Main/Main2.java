@@ -5,6 +5,7 @@
  */
 package View.Main;
 
+import View.Cliente.excluirCliente1;
 import View.Cliente.inserirCliente1;
 import View.Cliente.listarCliente1;
 import View.Cliente.listarCliente2;
@@ -71,6 +72,7 @@ public class Main2 extends javax.swing.JFrame {
         menuExclusaoClientes = new javax.swing.JMenuItem();
         menuExclusaoProjetores = new javax.swing.JMenuItem();
         menuExclusaoLocacao = new javax.swing.JMenuItem();
+        menuExclusaoClientes1 = new javax.swing.JMenuItem();
         menuAjuda = new javax.swing.JMenu();
         menuAjudaSobreSistema = new javax.swing.JMenuItem();
 
@@ -227,6 +229,14 @@ public class Main2 extends javax.swing.JFrame {
         });
         menuExclusao.add(menuExclusaoLocacao);
 
+        menuExclusaoClientes1.setText("Clientes (helio)");
+        menuExclusaoClientes1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuExclusaoClientes1ActionPerformed(evt);
+            }
+        });
+        menuExclusao.add(menuExclusaoClientes1);
+
         barraMenu.add(menuExclusao);
 
         menuAjuda.setText("Ajuda");
@@ -284,6 +294,11 @@ public class Main2 extends javax.swing.JFrame {
         navegarEntreTelas(new listarCliente2());
     }//GEN-LAST:event_menuListagemClientes1ActionPerformed
 
+    private void menuExclusaoClientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuExclusaoClientes1ActionPerformed
+        // TODO add your handling code here:
+        navegarEntreTelas(new excluirCliente1());
+    }//GEN-LAST:event_menuExclusaoClientes1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -333,6 +348,7 @@ public class Main2 extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuEdicaoProjetores;
     private javax.swing.JMenu menuExclusao;
     private javax.swing.JMenuItem menuExclusaoClientes;
+    private javax.swing.JMenuItem menuExclusaoClientes1;
     private javax.swing.JMenuItem menuExclusaoLocacao;
     private javax.swing.JMenuItem menuExclusaoProjetores;
     private javax.swing.JMenu menuListagem;
