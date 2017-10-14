@@ -18,7 +18,9 @@ public class Main2 extends javax.swing.JFrame {
 	 * Creates new form Main2
 	 */
 	public Main2() {
+		
 		initComponents();
+		navegarEntreTelas(new painelCorpo());
 	}
 
 	private void navegarEntreTelas(JPanel painel) {
@@ -48,15 +50,6 @@ public class Main2 extends javax.swing.JFrame {
             painelCabecalhoImagemProjetor = new javax.swing.JLabel();
             painelCabecalhoBotaoMenu = new javax.swing.JButton();
             painelCorpo = new javax.swing.JPanel();
-            painelCorpo1 = new javax.swing.JPanel();
-            painelCorpo2 = new javax.swing.JPanel();
-            painelCorpo2LabelTitulo = new javax.swing.JLabel();
-            painelCorpo2LabelImagemCasa = new javax.swing.JLabel();
-            painelCorpo2LabelMensagem1 = new javax.swing.JLabel();
-            painelCorpo1LabelImagemProjetor = new javax.swing.JLabel();
-            painelCorpo1LabelMensagem1 = new javax.swing.JLabel();
-            painelCorpo1LabelImagemCorcao = new javax.swing.JLabel();
-            painelCorpo1LabelMensagem2 = new javax.swing.JLabel();
             barraMenu = new javax.swing.JMenuBar();
             menuCadastrar = new javax.swing.JMenu();
             menuCadastrarClientes = new javax.swing.JMenuItem();
@@ -102,7 +95,7 @@ public class Main2 extends javax.swing.JFrame {
                         .addComponent(painelCabecalhoBotaoMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(424, 424, 424)
                         .addComponent(painelCabecalhoImagemProjetor)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(537, Short.MAX_VALUE))
             );
             painelCabecalhoLayout.setVerticalGroup(
                   painelCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,123 +106,26 @@ public class Main2 extends javax.swing.JFrame {
                         .addContainerGap())
             );
 
-            painelCorpo.setBackground(new java.awt.Color(0, 153, 153));
-
-            painelCorpo1.setBackground(new java.awt.Color(0, 204, 204));
-
-            painelCorpo2.setBackground(new java.awt.Color(36, 46, 68));
-            painelCorpo2.setPreferredSize(new java.awt.Dimension(540, 432));
-
-            painelCorpo2LabelTitulo.setFont(new java.awt.Font("Bebas Neue Bold", 0, 24)); // NOI18N
-            painelCorpo2LabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
-            painelCorpo2LabelTitulo.setText("Bem-vindo ao DataShow Locator");
-
-            painelCorpo2LabelImagemCasa.setFont(new java.awt.Font("Bebas Neue Bold", 0, 10)); // NOI18N
-            painelCorpo2LabelImagemCasa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/home.png"))); // NOI18N
-
-            painelCorpo2LabelMensagem1.setFont(new java.awt.Font("Bebas Neue Bold", 1, 12)); // NOI18N
-            painelCorpo2LabelMensagem1.setForeground(new java.awt.Color(255, 255, 255));
-            painelCorpo2LabelMensagem1.setText("Conecte a sua vida ao presente e projete seu futuro com a gente");
-
-            javax.swing.GroupLayout painelCorpo2Layout = new javax.swing.GroupLayout(painelCorpo2);
-            painelCorpo2.setLayout(painelCorpo2Layout);
-            painelCorpo2Layout.setHorizontalGroup(
-                  painelCorpo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(painelCorpo2Layout.createSequentialGroup()
-                        .addContainerGap(109, Short.MAX_VALUE)
-                        .addGroup(painelCorpo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelCorpo2Layout.createSequentialGroup()
-                                    .addGroup(painelCorpo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                          .addComponent(painelCorpo2LabelTitulo)
-                                          .addComponent(painelCorpo2LabelMensagem1))
-                                    .addGap(66, 66, 66))
-                              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelCorpo2Layout.createSequentialGroup()
-                                    .addComponent(painelCorpo2LabelImagemCasa)
-                                    .addGap(229, 229, 229))))
-            );
-            painelCorpo2Layout.setVerticalGroup(
-                  painelCorpo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(painelCorpo2Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(painelCorpo2LabelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(73, 73, 73)
-                        .addComponent(painelCorpo2LabelImagemCasa, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68)
-                        .addComponent(painelCorpo2LabelMensagem1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(93, Short.MAX_VALUE))
-            );
-
-            painelCorpo1LabelImagemProjetor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/projector.png"))); // NOI18N
-
-            painelCorpo1LabelMensagem1.setFont(new java.awt.Font("Bebas Neue Bold", 0, 10)); // NOI18N
-            painelCorpo1LabelMensagem1.setText("Feito com ");
-
-            painelCorpo1LabelImagemCorcao.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/heart.png"))); // NOI18N
-
-            painelCorpo1LabelMensagem2.setFont(new java.awt.Font("Bebas Neue Bold", 0, 10)); // NOI18N
-            painelCorpo1LabelMensagem2.setText(" por IFFarSoft");
-
-            javax.swing.GroupLayout painelCorpo1Layout = new javax.swing.GroupLayout(painelCorpo1);
-            painelCorpo1.setLayout(painelCorpo1Layout);
-            painelCorpo1Layout.setHorizontalGroup(
-                  painelCorpo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelCorpo1Layout.createSequentialGroup()
-                        .addGroup(painelCorpo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                              .addGroup(painelCorpo1Layout.createSequentialGroup()
-                                    .addGap(132, 132, 132)
-                                    .addComponent(painelCorpo1LabelImagemProjetor))
-                              .addGroup(painelCorpo1Layout.createSequentialGroup()
-                                    .addGap(187, 187, 187)
-                                    .addComponent(painelCorpo1LabelMensagem1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(painelCorpo1LabelImagemCorcao, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(painelCorpo1LabelMensagem2)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
-                        .addComponent(painelCorpo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-            );
-            painelCorpo1Layout.setVerticalGroup(
-                  painelCorpo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(painelCorpo1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(painelCorpo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                              .addGroup(painelCorpo1Layout.createSequentialGroup()
-                                    .addComponent(painelCorpo1LabelImagemProjetor)
-                                    .addGap(57, 57, 57)
-                                    .addGroup(painelCorpo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                          .addComponent(painelCorpo1LabelImagemCorcao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                          .addComponent(painelCorpo1LabelMensagem1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                          .addComponent(painelCorpo1LabelMensagem2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(0, 0, Short.MAX_VALUE))
-                              .addComponent(painelCorpo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
-            );
+            painelCorpo.setBackground(new java.awt.Color(0, 0, 0));
 
             javax.swing.GroupLayout painelCorpoLayout = new javax.swing.GroupLayout(painelCorpo);
             painelCorpo.setLayout(painelCorpoLayout);
             painelCorpoLayout.setHorizontalGroup(
                   painelCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelCorpoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(painelCorpo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
+                  .addGap(0, 0, Short.MAX_VALUE)
             );
             painelCorpoLayout.setVerticalGroup(
                   painelCorpoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(painelCorpoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(painelCorpo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
+                  .addGap(0, 476, Short.MAX_VALUE)
             );
 
             javax.swing.GroupLayout painelPrincipalLayout = new javax.swing.GroupLayout(painelPrincipal);
             painelPrincipal.setLayout(painelPrincipalLayout);
             painelPrincipalLayout.setHorizontalGroup(
                   painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addGroup(painelPrincipalLayout.createSequentialGroup()
+                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelPrincipalLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(painelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                               .addComponent(painelCorpo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                               .addComponent(painelCabecalho, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())
@@ -359,6 +255,7 @@ public class Main2 extends javax.swing.JFrame {
       private void painelCabecalhoBotaoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_painelCabecalhoBotaoMenuActionPerformed
 	
 		// TODO - fazer a tela voltar a tela inicial
+		navegarEntreTelas(new painelCorpo());
       }//GEN-LAST:event_painelCabecalhoBotaoMenuActionPerformed
 
 	/**
@@ -420,15 +317,6 @@ public class Main2 extends javax.swing.JFrame {
       private javax.swing.JButton painelCabecalhoBotaoMenu;
       private javax.swing.JLabel painelCabecalhoImagemProjetor;
       private javax.swing.JPanel painelCorpo;
-      private javax.swing.JPanel painelCorpo1;
-      private javax.swing.JLabel painelCorpo1LabelImagemCorcao;
-      private javax.swing.JLabel painelCorpo1LabelImagemProjetor;
-      private javax.swing.JLabel painelCorpo1LabelMensagem1;
-      private javax.swing.JLabel painelCorpo1LabelMensagem2;
-      private javax.swing.JPanel painelCorpo2;
-      private javax.swing.JLabel painelCorpo2LabelImagemCasa;
-      private javax.swing.JLabel painelCorpo2LabelMensagem1;
-      private javax.swing.JLabel painelCorpo2LabelTitulo;
       private javax.swing.JPanel painelPrincipal;
       // End of variables declaration//GEN-END:variables
 }
