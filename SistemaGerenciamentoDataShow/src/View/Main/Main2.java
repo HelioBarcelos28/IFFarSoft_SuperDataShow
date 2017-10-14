@@ -46,7 +46,7 @@ public class Main2 extends javax.swing.JFrame {
             painelPrincipal = new javax.swing.JPanel();
             painelCabecalho = new javax.swing.JPanel();
             painelCabecalhoImagemProjetor = new javax.swing.JLabel();
-            painelCabecalhoImagemMenu = new javax.swing.JLabel();
+            painelCabecalhoBotaoMenu = new javax.swing.JButton();
             painelCorpo = new javax.swing.JPanel();
             painelCorpo1 = new javax.swing.JPanel();
             painelCorpo2 = new javax.swing.JPanel();
@@ -85,7 +85,13 @@ public class Main2 extends javax.swing.JFrame {
 
             painelCabecalhoImagemProjetor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/projector_white.png"))); // NOI18N
 
-            painelCabecalhoImagemMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/menu_white.png"))); // NOI18N
+            painelCabecalhoBotaoMenu.setBackground(new java.awt.Color(36, 46, 68));
+            painelCabecalhoBotaoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/menu_white.png"))); // NOI18N
+            painelCabecalhoBotaoMenu.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        painelCabecalhoBotaoMenuActionPerformed(evt);
+                  }
+            });
 
             javax.swing.GroupLayout painelCabecalhoLayout = new javax.swing.GroupLayout(painelCabecalho);
             painelCabecalho.setLayout(painelCabecalhoLayout);
@@ -93,18 +99,18 @@ public class Main2 extends javax.swing.JFrame {
                   painelCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(painelCabecalhoLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addComponent(painelCabecalhoImagemMenu)
-                        .addGap(443, 443, 443)
+                        .addComponent(painelCabecalhoBotaoMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(424, 424, 424)
                         .addComponent(painelCabecalhoImagemProjetor)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             );
             painelCabecalhoLayout.setVerticalGroup(
                   painelCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addComponent(painelCabecalhoImagemProjetor, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                  .addGroup(painelCabecalhoLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(painelCabecalhoImagemMenu)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelCabecalhoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(painelCabecalhoBotaoMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
             );
 
             painelCorpo.setBackground(new java.awt.Color(0, 153, 153));
@@ -112,6 +118,7 @@ public class Main2 extends javax.swing.JFrame {
             painelCorpo1.setBackground(new java.awt.Color(0, 204, 204));
 
             painelCorpo2.setBackground(new java.awt.Color(36, 46, 68));
+            painelCorpo2.setPreferredSize(new java.awt.Dimension(540, 432));
 
             painelCorpo2LabelTitulo.setFont(new java.awt.Font("Bebas Neue Bold", 0, 24)); // NOI18N
             painelCorpo2LabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -129,7 +136,7 @@ public class Main2 extends javax.swing.JFrame {
             painelCorpo2Layout.setHorizontalGroup(
                   painelCorpo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(painelCorpo2Layout.createSequentialGroup()
-                        .addContainerGap(99, Short.MAX_VALUE)
+                        .addContainerGap(109, Short.MAX_VALUE)
                         .addGroup(painelCorpo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                               .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelCorpo2Layout.createSequentialGroup()
                                     .addGroup(painelCorpo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -178,7 +185,7 @@ public class Main2 extends javax.swing.JFrame {
                                     .addComponent(painelCorpo1LabelImagemCorcao, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(painelCorpo1LabelMensagem2)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
                         .addComponent(painelCorpo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
             );
@@ -349,6 +356,11 @@ public class Main2 extends javax.swing.JFrame {
 		navegarEntreTelas(new inserirCliente1());
       }//GEN-LAST:event_menuCadastrarClientesActionPerformed
 
+      private void painelCabecalhoBotaoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_painelCabecalhoBotaoMenuActionPerformed
+	
+		// TODO - fazer a tela voltar a tela inicial
+      }//GEN-LAST:event_painelCabecalhoBotaoMenuActionPerformed
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -405,7 +417,7 @@ public class Main2 extends javax.swing.JFrame {
       private javax.swing.JMenuItem menuListagemLocacoes;
       private javax.swing.JMenuItem menuListagemProjetores;
       private javax.swing.JPanel painelCabecalho;
-      private javax.swing.JLabel painelCabecalhoImagemMenu;
+      private javax.swing.JButton painelCabecalhoBotaoMenu;
       private javax.swing.JLabel painelCabecalhoImagemProjetor;
       private javax.swing.JPanel painelCorpo;
       private javax.swing.JPanel painelCorpo1;
