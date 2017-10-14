@@ -17,14 +17,13 @@ import javax.swing.JOptionPane;
  */
 public class inserirCliente1 extends javax.swing.JPanel {
 
-	private final Cliente cliente = new Cliente();
-	private final Connection con = new Conexao().AbrirConexao();
-	private final ClienteController cc = new ClienteController(con);
-	
 	/**
 	 * Creates new form inserirCliente1
 	 */
 	public inserirCliente1() {
+		
+		Connection con = new Conexao().AbrirConexao();
+		ClienteController cc = new ClienteController(con);
 		
 		initComponents();
 
@@ -426,12 +425,16 @@ public class inserirCliente1 extends javax.swing.JPanel {
 
       private void botaoCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoCadastrarActionPerformed
 		
-		boolean campoVazio = (textFieldCep.getText().isEmpty() ? 
-			               (textFieldCnpj.getText().isEmpty() ? 
-			               (textFieldEmail.getText().isEmpty() ? 
-			               (textFieldNomeContato.getText().isEmpty() ? 
-			               (textFieldRazaoSocial.getText().isEmpty() ? 
-			               (textFieldRua.getText().isEmpty() ? 
+		Cliente cliente = new Cliente();
+		Connection con = new Conexao().AbrirConexao();
+		ClienteController cc = new ClienteController(con);
+		
+		boolean campoVazio = (textFieldCep.getText().equals("") ? 
+			               (textFieldCnpj.getText().equals("") ? 
+			               (textFieldEmail.getText().equals("") ? 
+			               (textFieldNomeContato.getText().equals("") ? 
+			               (textFieldRazaoSocial.getText().equals("") ? 
+			               (textFieldRua.getText().equals("") ? 
 			               (textFieldTelefone.getText().isEmpty()) : false) : false) : false) : false) : false) : false);
 		
 		if (campoVazio) {

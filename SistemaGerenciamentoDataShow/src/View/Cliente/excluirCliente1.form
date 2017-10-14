@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<<<<<<< HEAD
+=======
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="99" green="99" red="0" type="rgb"/>
     </Property>
   </Properties>
+>>>>>>> 21dbce98ad747ff1a0a3c4be3f1c0054c11500f1
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -21,19 +24,29 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+<<<<<<< HEAD
+          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+=======
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" pref="982" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
+>>>>>>> 21dbce98ad747ff1a0a3c4be3f1c0054c11500f1
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
+<<<<<<< HEAD
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+=======
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" pref="465" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
+>>>>>>> 21dbce98ad747ff1a0a3c4be3f1c0054c11500f1
           </Group>
       </Group>
     </DimensionLayout>
@@ -44,12 +57,15 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="99" green="99" red="0" type="rgb"/>
         </Property>
+<<<<<<< HEAD
+=======
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Cursor Padr&#xe3;o"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[950, 400]"/>
         </Property>
+>>>>>>> 21dbce98ad747ff1a0a3c4be3f1c0054c11500f1
       </Properties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
@@ -67,6 +83,17 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e0" green="e0" red="e0" type="rgb"/>
             </Property>
+<<<<<<< HEAD
+            <Property name="text" type="java.lang.String" value="Exclus&#xe3;o de Clientes"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="390" y="20" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField1">
+=======
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Excluir Clientes"/>
           </Properties>
@@ -77,6 +104,7 @@
           </Constraints>
         </Component>
         <Component class="javax.swing.JTextField" name="textFieldIdCliente">
+>>>>>>> 21dbce98ad747ff1a0a3c4be3f1c0054c11500f1
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -155,7 +183,11 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
+<<<<<<< HEAD
+            <Component class="javax.swing.JTable" name="jTable1">
+=======
             <Component class="javax.swing.JTable" name="jTableExcluir">
+>>>>>>> 21dbce98ad747ff1a0a3c4be3f1c0054c11500f1
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="10" rowCount="0">
@@ -176,7 +208,11 @@
                 </Property>
               </Properties>
               <Events>
+<<<<<<< HEAD
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable1MouseClicked"/>
+=======
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTableExcluirMouseClicked"/>
+>>>>>>> 21dbce98ad747ff1a0a3c4be3f1c0054c11500f1
               </Events>
             </Component>
           </SubComponents>
@@ -253,7 +289,11 @@
             </Constraint>
           </Constraints>
         </Component>
+<<<<<<< HEAD
+        <Component class="javax.swing.JTextField" name="jTextField3">
+=======
         <Component class="javax.swing.JTextField" name="textFieldNomeContato">
+>>>>>>> 21dbce98ad747ff1a0a3c4be3f1c0054c11500f1
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -297,7 +337,11 @@
             </Constraint>
           </Constraints>
         </Component>
+<<<<<<< HEAD
+        <Component class="javax.swing.JTextField" name="jTextField4">
+=======
         <Component class="javax.swing.JTextField" name="textFieldRazaoSocial">
+>>>>>>> 21dbce98ad747ff1a0a3c4be3f1c0054c11500f1
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -341,7 +385,11 @@
             </Constraint>
           </Constraints>
         </Component>
+<<<<<<< HEAD
+        <Component class="javax.swing.JTextField" name="jTextField5">
+=======
         <Component class="javax.swing.JTextField" name="textFieldCnpj">
+>>>>>>> 21dbce98ad747ff1a0a3c4be3f1c0054c11500f1
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -385,7 +433,11 @@
             </Constraint>
           </Constraints>
         </Component>
+<<<<<<< HEAD
+        <Component class="javax.swing.JTextField" name="jTextField6">
+=======
         <Component class="javax.swing.JTextField" name="textFieldEmail">
+>>>>>>> 21dbce98ad747ff1a0a3c4be3f1c0054c11500f1
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -429,7 +481,11 @@
             </Constraint>
           </Constraints>
         </Component>
+<<<<<<< HEAD
+        <Component class="javax.swing.JTextField" name="jTextField7">
+=======
         <Component class="javax.swing.JTextField" name="textFieldTelefone">
+>>>>>>> 21dbce98ad747ff1a0a3c4be3f1c0054c11500f1
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -473,7 +529,11 @@
             </Constraint>
           </Constraints>
         </Component>
+<<<<<<< HEAD
+        <Component class="javax.swing.JTextField" name="jTextField8">
+=======
         <Component class="javax.swing.JTextField" name="textFieldEstado">
+>>>>>>> 21dbce98ad747ff1a0a3c4be3f1c0054c11500f1
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -517,7 +577,11 @@
             </Constraint>
           </Constraints>
         </Component>
+<<<<<<< HEAD
+        <Component class="javax.swing.JTextField" name="jTextField9">
+=======
         <Component class="javax.swing.JTextField" name="textFieldCidade">
+>>>>>>> 21dbce98ad747ff1a0a3c4be3f1c0054c11500f1
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -561,7 +625,11 @@
             </Constraint>
           </Constraints>
         </Component>
+<<<<<<< HEAD
+        <Component class="javax.swing.JTextField" name="jTextField10">
+=======
         <Component class="javax.swing.JTextField" name="textFieldCep">
+>>>>>>> 21dbce98ad747ff1a0a3c4be3f1c0054c11500f1
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -605,7 +673,11 @@
             </Constraint>
           </Constraints>
         </Component>
+<<<<<<< HEAD
+        <Component class="javax.swing.JTextField" name="jTextField11">
+=======
         <Component class="javax.swing.JTextField" name="textFieldRua">
+>>>>>>> 21dbce98ad747ff1a0a3c4be3f1c0054c11500f1
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -636,6 +708,21 @@
             </Constraint>
           </Constraints>
         </Component>
+<<<<<<< HEAD
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI Light" size="13" style="0"/>
+            </Property>
+            <Property name="label" type="java.lang.String" value="Excluir"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+          </Events>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="720" y="410" width="-1" height="-1"/>
+=======
         <Component class="javax.swing.JButton" name="jButtonBusca">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -681,6 +768,7 @@
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="790" y="420" width="-1" height="-1"/>
+>>>>>>> 21dbce98ad747ff1a0a3c4be3f1c0054c11500f1
             </Constraint>
           </Constraints>
         </Component>
