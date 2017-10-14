@@ -186,7 +186,7 @@ public class alterarCliente1 extends javax.swing.JPanel {
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 370, 10));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
-        jLabel4.setText("Nome: ");
+        jLabel4.setText("<html>Nome:<font color=\"red\"><b>*</b></font>");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 130, -1, -1));
 
         textFieldNomeContato.setBackground(new java.awt.Color(0, 153, 153));
@@ -198,7 +198,7 @@ public class alterarCliente1 extends javax.swing.JPanel {
         jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 150, 230, 10));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
-        jLabel5.setText("Razão: ");
+        jLabel5.setText("<html>Razão:<font color=\"red\"><b>*</b></font>");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 160, -1, -1));
 
         textFieldRazaoSocial.setBackground(new java.awt.Color(0, 153, 153));
@@ -210,7 +210,7 @@ public class alterarCliente1 extends javax.swing.JPanel {
         jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 180, 230, 10));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
-        jLabel6.setText("Cnpj: ");
+        jLabel6.setText("<html>Cnpj:<font color=\"red\"><b>*</b></font>");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 190, -1, -1));
 
         textFieldCnpj.setBackground(new java.awt.Color(0, 153, 153));
@@ -222,7 +222,7 @@ public class alterarCliente1 extends javax.swing.JPanel {
         jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 210, 230, 10));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
-        jLabel7.setText("E-mail: ");
+        jLabel7.setText("<html>E-mail:<font color=\"red\"><b>*</b></font>");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 220, -1, -1));
 
         textFieldEmail.setBackground(new java.awt.Color(0, 153, 153));
@@ -234,7 +234,7 @@ public class alterarCliente1 extends javax.swing.JPanel {
         jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 240, 230, 10));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
-        jLabel8.setText("Tel: ");
+        jLabel8.setText("<html>Tel:<font color=\"red\"><b>*</b></font>");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 250, -1, -1));
 
         textFieldTelefone.setBackground(new java.awt.Color(0, 153, 153));
@@ -254,7 +254,7 @@ public class alterarCliente1 extends javax.swing.JPanel {
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 330, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
-        jLabel11.setText("Cep: ");
+        jLabel11.setText("<html>Cep:<font color=\"red\"><b>*</b></font>");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 360, -1, -1));
 
         textFieldCep.setBackground(new java.awt.Color(0, 153, 153));
@@ -266,7 +266,7 @@ public class alterarCliente1 extends javax.swing.JPanel {
         jPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 380, 230, 0));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
-        jLabel12.setText("Rua: ");
+        jLabel12.setText("<html>Rua:<font color=\"red\"><b>*</b></font> ");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, -1, -1));
 
         textFieldRua.setBackground(new java.awt.Color(0, 153, 153));
@@ -444,7 +444,7 @@ public class alterarCliente1 extends javax.swing.JPanel {
                         cliente = cc.listarClientesEspecificosCidade(jTextField2.getText(), 0);
                         break;
                     }
-
+ 
                     if (cliente.isEmpty()) {
 
                         JOptionPane.showMessageDialog(null, "Não existem dados para essa busca");

@@ -244,7 +244,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Light" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Nome Contato: "/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;Nome Contato:&lt;font color=&quot;red&quot;&gt;&lt;b&gt;*&lt;/b&gt;&lt;/font&gt;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="labelRazaoSocial">
@@ -252,7 +252,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Light" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Razao Social: "/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;Raz&#xe3;o Social:&lt;font color=&quot;red&quot;&gt;&lt;b&gt;*&lt;/b&gt;&lt;/font&gt;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="labelRua">
@@ -260,7 +260,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Light" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Rua: "/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;Rua:&lt;font color=&quot;red&quot;&gt;&lt;b&gt;*&lt;/b&gt;&lt;/font&gt;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="labelCnpj">
@@ -268,7 +268,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Light" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Cnpj: "/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;Cnpj:&lt;font color=&quot;red&quot;&gt;&lt;b&gt;*&lt;/b&gt;&lt;/font&gt;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="labelCidade">
@@ -292,7 +292,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Light" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Cep: "/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;Cep:&lt;font color=&quot;red&quot;&gt;&lt;b&gt;*&lt;/b&gt;&lt;/font&gt; "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="labelEmail">
@@ -300,7 +300,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Light" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="E-mail: "/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;E-mail:&lt;font color=&quot;red&quot;&gt;&lt;b&gt;*&lt;/b&gt;&lt;/font&gt;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="labelTelefone">
@@ -308,7 +308,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Light" size="18" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Telefone: "/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;Telefone:&lt;font color=&quot;red&quot;&gt;&lt;b&gt;*&lt;/b&gt;&lt;/font&gt;"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="textFieldEmail">
