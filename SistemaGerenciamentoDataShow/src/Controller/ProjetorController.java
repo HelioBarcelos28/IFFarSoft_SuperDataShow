@@ -55,7 +55,7 @@ public class ProjetorController {
 			PreparedStatement stmt = conexao.prepareStatement(SQL);
 
 			stmt.setString(1, projetor.getMarca());
-			stmt.setString(2, projetor.getModelos());
+			stmt.setString(2, projetor.getModelo());
 			stmt.setString(3, projetor.getNumeroSerie());
 			stmt.setDate(4, formatarData(projetor.getDataCompra()));
 			stmt.setString(5, projetor.getAnsiLumens());
@@ -83,7 +83,7 @@ public class ProjetorController {
 			PreparedStatement stmt = conexao.prepareStatement(SQL);
 			
 			stmt.setString(1, projetor.getMarca());
-			stmt.setString(2, projetor.getModelos());
+			stmt.setString(2, projetor.getModelo());
 			stmt.setString(3, projetor.getNumeroSerie());
 			stmt.setDate(4, formatarData(projetor.getDataCompra()));
 			stmt.setString(5, projetor.getAnsiLumens());
@@ -129,7 +129,7 @@ public class ProjetorController {
 			
 			PreparedStatement stmt = conexao.prepareStatement(SQL);
 			
-			stmt.setString(1, projetor.getModelos());
+			stmt.setString(1, projetor.getModelo());
 
 			if (stmt.executeUpdate() > 0) {
 
@@ -301,7 +301,7 @@ public class ProjetorController {
 					Projetor projetor = new Projetor();
 
 					projetor.setMarca			(rs.getString("marca"));
-					projetor.setModelos		(rs.getString("modelo"));
+					projetor.setModelo		(rs.getString("modelo"));
 					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
 					projetor.setDataCompra		(rs.getString("dataCompra"));
 					projetor.setAnsiLumens		(rs.getString("ansiLumens"));
@@ -355,7 +355,7 @@ public class ProjetorController {
 
 					projetor.setIdProjetor		(rs.getString("idProjetor"));
 					projetor.setMarca			(rs.getString("marca"));
-					projetor.setModelos		(rs.getString("modelo"));
+					projetor.setModelo		(rs.getString("modelo"));
 					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
 					projetor.setDataCompra		(rs.getString("dataCompra"));
 					projetor.setAnsiLumens		(rs.getString("ansiLumens"));
@@ -409,7 +409,7 @@ public class ProjetorController {
 
 					projetor.setIdProjetor		(rs.getString("idProjetor"));
 					projetor.setMarca			(rs.getString("marca"));
-					projetor.setModelos		(rs.getString("modelo"));
+					projetor.setModelo		(rs.getString("modelo"));
 					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
 					projetor.setDataCompra		(rs.getString("dataCompra"));
 					projetor.setAnsiLumens		(rs.getString("ansiLumens"));
@@ -463,7 +463,7 @@ public class ProjetorController {
 
 					projetor.setIdProjetor		(rs.getString("idProjetor"));
 					projetor.setMarca			(rs.getString("marca"));
-					projetor.setModelos		(rs.getString("modelo"));
+					projetor.setModelo		(rs.getString("modelo"));
 					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
 					projetor.setDataCompra		(rs.getString("dataCompra"));
 					projetor.setAnsiLumens		(rs.getString("ansiLumens"));
@@ -517,7 +517,7 @@ public class ProjetorController {
 
 					projetor.setIdProjetor		(rs.getString("idProjetor"));
 					projetor.setMarca			(rs.getString("marca"));
-					projetor.setModelos		(rs.getString("modelo"));
+					projetor.setModelo		(rs.getString("modelo"));
 					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
 					projetor.setDataCompra		(rs.getString("dataCompra"));
 					projetor.setAnsiLumens		(rs.getString("ansiLumens"));
@@ -571,7 +571,7 @@ public class ProjetorController {
 
 					projetor.setIdProjetor		(rs.getString("idProjetor"));
 					projetor.setMarca			(rs.getString("marca"));
-					projetor.setModelos		(rs.getString("modelo"));
+					projetor.setModelo		(rs.getString("modelo"));
 					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
 					projetor.setDataCompra		(rs.getString("dataCompra"));
 					projetor.setAnsiLumens		(rs.getString("ansiLumens"));
@@ -625,7 +625,7 @@ public class ProjetorController {
 
 					projetor.setIdProjetor		(rs.getString("idProjetor"));
 					projetor.setMarca			(rs.getString("marca"));
-					projetor.setModelos		(rs.getString("modelo"));
+					projetor.setModelo		(rs.getString("modelo"));
 					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
 					projetor.setDataCompra		(rs.getString("dataCompra"));
 					projetor.setAnsiLumens		(rs.getString("ansiLumens"));
@@ -679,7 +679,7 @@ public class ProjetorController {
 
 					projetor.setIdProjetor		(rs.getString("idProjetor"));
 					projetor.setMarca			(rs.getString("marca"));
-					projetor.setModelos		(rs.getString("modelo"));
+					projetor.setModelo		(rs.getString("modelo"));
 					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
 					projetor.setDataCompra		(rs.getString("dataCompra"));
 					projetor.setAnsiLumens		(rs.getString("ansiLumens"));
@@ -733,7 +733,7 @@ public class ProjetorController {
 
 					projetor.setIdProjetor		(rs.getString("idProjetor"));
 					projetor.setMarca			(rs.getString("marca"));
-					projetor.setModelos		(rs.getString("modelo"));
+					projetor.setModelo		(rs.getString("modelo"));
 					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
 					projetor.setDataCompra		(rs.getString("dataCompra"));
 					projetor.setAnsiLumens		(rs.getString("ansiLumens"));

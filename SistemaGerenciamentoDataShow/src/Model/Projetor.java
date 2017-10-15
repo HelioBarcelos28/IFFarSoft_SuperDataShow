@@ -12,7 +12,7 @@ public class Projetor {
 
 	private String idProjetor;
 	private String marca;
-	private String modelos;
+	private String modelo;
 	private String numeroSerie;
 	private String dataCompra;
 	private String ansiLumens;
@@ -36,12 +36,12 @@ public class Projetor {
 		this.marca = marca;
 	}
 
-	public String getModelos() {
-		return modelos;
+	public String getModelo() {
+		return modelo;
 	}
 
-	public void setModelos(String modelos) {
-		this.modelos = modelos;
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
 	}
 
 	public String getNumeroSerie() {

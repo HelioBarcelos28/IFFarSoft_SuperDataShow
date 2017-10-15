@@ -313,12 +313,12 @@ public class inserirCliente extends javax.swing.JPanel {
 		Connection con = new Conexao().AbrirConexao();
 		ClienteController cc = new ClienteController(con);
 		
-		boolean campoVazio = (textFieldCep.getText().equals("") ? 
-			               (textFieldCnpj.getText().equals("") ? 
-			               (textFieldEmail.getText().equals("") ? 
-			               (textFieldNomeContato.getText().equals("") ? 
-			               (textFieldRazaoSocial.getText().equals("") ? 
-			               (textFieldRua.getText().equals("") ? 
+		boolean campoVazio = (textFieldCep.getText().isEmpty() ? 
+			               (textFieldCnpj.getText().isEmpty() ? 
+			               (textFieldEmail.getText().isEmpty() ? 
+			               (textFieldNomeContato.getText().isEmpty() ? 
+			               (textFieldRazaoSocial.getText().isEmpty() ? 
+			               (textFieldRua.getText().isEmpty() ? 
 			               (textFieldTelefone.getText().isEmpty()) : false) : false) : false) : false) : false) : false);
 		
 		if (campoVazio) {

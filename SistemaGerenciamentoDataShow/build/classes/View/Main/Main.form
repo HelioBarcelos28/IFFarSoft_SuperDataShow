@@ -21,6 +21,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Projetores"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuCadastrarProjetoresActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuCadastrarLocacoes">
               <Properties>
@@ -55,14 +58,6 @@
                 <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menuEdicaoClientes1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Clientes (helio)"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuEdicaoClientes1ActionPerformed"/>
-              </Events>
-            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuListagem">
@@ -87,14 +82,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Loca&#xe7;&#xf5;es"/>
               </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menuListagemClientes1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Clientes (helio)"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuListagemClientes1ActionPerformed"/>
-              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -122,14 +109,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuExclusaoLocacaoActionPerformed"/>
-              </Events>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="menuExclusaoClientes1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Clientes (helio)"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuExclusaoClientes1ActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -228,9 +207,9 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       <Component id="painelCabecalhoBotaoMenu" min="-2" pref="56" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="424" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="441" max="-2" attributes="0"/>
                       <Component id="painelCabecalhoImagemProjetor" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="537" max="32767" attributes="0"/>
+                      <EmptySpace pref="520" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

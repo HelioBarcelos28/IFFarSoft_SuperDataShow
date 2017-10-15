@@ -120,7 +120,7 @@ public class alterarCliente extends javax.swing.JPanel {
                         jComboBox1ActionPerformed(evt);
                   }
             });
-            jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 91, 360, 30));
+            jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 360, 30));
 
             jTable1.setModel(new javax.swing.table.DefaultTableModel(
                   new Object [][] {
@@ -145,11 +145,11 @@ public class alterarCliente extends javax.swing.JPanel {
             });
             jScrollPane1.setViewportView(jTable1);
 
-            jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 490, 270));
+            jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 490, 270));
 
             jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
             jLabel2.setText("Buscar cliente: ");
-            jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(23, 90, 120, 40));
+            jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 120, 40));
 
             jTextField2.setBackground(new java.awt.Color(0, 153, 153));
             jTextField2.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
@@ -159,27 +159,27 @@ public class alterarCliente extends javax.swing.JPanel {
                         jTextField2KeyPressed(evt);
                   }
             });
-            jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 360, 30));
+            jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 360, 30));
 
             jSeparator2.setBackground(new java.awt.Color(224, 224, 224));
-            jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 360, 10));
+            jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 360, 10));
 
             labelNomeContato.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
             labelNomeContato.setText("<html>Nome Contato:<font color=\"red\"><b></b></font>");
-            jPanel1.add(labelNomeContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 90, -1, -1));
+            jPanel1.add(labelNomeContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 90, -1, -1));
 
             separadorRua.setBackground(new java.awt.Color(224, 224, 224));
-            jPanel1.add(separadorRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 210, 170, 10));
+            jPanel1.add(separadorRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 210, 170, 10));
 
             labelEmail.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
             labelEmail.setText("<html>E-mail:<font color=\"red\"><b></b></font>");
-            jPanel1.add(labelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, -1, -1));
+            jPanel1.add(labelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 300, -1, -1));
 
             separadorCnpj.setBackground(new java.awt.Color(224, 224, 224));
-            jPanel1.add(separadorCnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 280, 170, 10));
+            jPanel1.add(separadorCnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 280, 170, 10));
 
             separadorNomeContato.setBackground(new java.awt.Color(224, 224, 224));
-            jPanel1.add(separadorNomeContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 140, 170, 10));
+            jPanel1.add(separadorNomeContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, 170, 10));
 
             textFieldCnpj.setBackground(new java.awt.Color(0, 153, 153));
             textFieldCnpj.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
@@ -189,11 +189,11 @@ public class alterarCliente extends javax.swing.JPanel {
                         textFieldCnpjActionPerformed(evt);
                   }
             });
-            jPanel1.add(textFieldCnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 260, 170, -1));
+            jPanel1.add(textFieldCnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 260, 170, -1));
 
             labelCnpj.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
             labelCnpj.setText("<html>Cnpj:<font color=\"red\"><b></b></font>");
-            jPanel1.add(labelCnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 230, -1, -1));
+            jPanel1.add(labelCnpj, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 230, -1, -1));
 
             botaoLimpar.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
             botaoLimpar.setText("Limpar");
@@ -202,7 +202,7 @@ public class alterarCliente extends javax.swing.JPanel {
                         botaoLimparActionPerformed(evt);
                   }
             });
-            jPanel1.add(botaoLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 390, 80, -1));
+            jPanel1.add(botaoLimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 390, 80, -1));
 
             textFieldNomeContato.setBackground(new java.awt.Color(0, 153, 153));
             textFieldNomeContato.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
@@ -212,20 +212,20 @@ public class alterarCliente extends javax.swing.JPanel {
                         textFieldNomeContatoActionPerformed(evt);
                   }
             });
-            jPanel1.add(textFieldNomeContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 120, 170, -1));
+            jPanel1.add(textFieldNomeContato, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 120, 170, -1));
 
             labelRua.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
             labelRua.setText("<html>Rua:<font color=\"red\"><b></b></font>");
-            jPanel1.add(labelRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 160, -1, -1));
+            jPanel1.add(labelRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, -1, -1));
 
             labelCep.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
             labelCep.setText("<html>Cep:<font color=\"red\"><b></b></font> ");
-            jPanel1.add(labelCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 370, -1, -1));
+            jPanel1.add(labelCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 370, -1, -1));
 
             comboBoxEstado.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
             comboBoxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione seu estado" }));
             comboBoxEstado.setBorder(null);
-            jPanel1.add(comboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 330, 170, -1));
+            jPanel1.add(comboBoxEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 330, 170, -1));
 
             textFieldEmail.setBackground(new java.awt.Color(0, 153, 153));
             textFieldEmail.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
@@ -235,11 +235,11 @@ public class alterarCliente extends javax.swing.JPanel {
                         textFieldEmailActionPerformed(evt);
                   }
             });
-            jPanel1.add(textFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 330, 170, -1));
+            jPanel1.add(textFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 330, 170, -1));
 
             labelTelefone.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
             labelTelefone.setText("<html>Telefone:<font color=\"red\"><b></b></font>");
-            jPanel1.add(labelTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 90, -1, -1));
+            jPanel1.add(labelTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 90, -1, -1));
 
             textFieldTelefone.setBackground(new java.awt.Color(0, 153, 153));
             textFieldTelefone.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
@@ -249,10 +249,10 @@ public class alterarCliente extends javax.swing.JPanel {
                         textFieldTelefoneActionPerformed(evt);
                   }
             });
-            jPanel1.add(textFieldTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 120, 170, -1));
+            jPanel1.add(textFieldTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 120, 170, -1));
 
             separadorCep.setBackground(new java.awt.Color(224, 224, 224));
-            jPanel1.add(separadorCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 490, 10));
+            jPanel1.add(separadorCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 490, 10));
 
             textFieldRua.setBackground(new java.awt.Color(0, 153, 153));
             textFieldRua.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
@@ -262,11 +262,11 @@ public class alterarCliente extends javax.swing.JPanel {
                         textFieldRuaActionPerformed(evt);
                   }
             });
-            jPanel1.add(textFieldRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 190, 170, -1));
+            jPanel1.add(textFieldRua, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 190, 170, -1));
 
             labelRazaoSocial.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
             labelRazaoSocial.setText("<html>Razão Social:<font color=\"red\"><b></b></font>");
-            jPanel1.add(labelRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 160, -1, -1));
+            jPanel1.add(labelRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 160, -1, -1));
 
             botaoCadastrar.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
             botaoCadastrar.setText("Cadastrar");
@@ -275,17 +275,17 @@ public class alterarCliente extends javax.swing.JPanel {
                         botaoCadastrarActionPerformed(evt);
                   }
             });
-            jPanel1.add(botaoCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 390, -1, -1));
+            jPanel1.add(botaoCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 390, -1, -1));
 
             labelCidade.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
             labelCidade.setText("Cidade: ");
-            jPanel1.add(labelCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 230, -1, -1));
+            jPanel1.add(labelCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 230, -1, -1));
 
             separadorRazaoSocial.setBackground(new java.awt.Color(224, 224, 224));
-            jPanel1.add(separadorRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 210, 170, 10));
+            jPanel1.add(separadorRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 210, 170, 10));
 
             separadorTelefone.setBackground(new java.awt.Color(224, 224, 224));
-            jPanel1.add(separadorTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, 170, 10));
+            jPanel1.add(separadorTelefone, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 140, 170, 10));
 
             textFieldRazaoSocial.setBackground(new java.awt.Color(0, 153, 153));
             textFieldRazaoSocial.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
@@ -295,7 +295,7 @@ public class alterarCliente extends javax.swing.JPanel {
                         textFieldRazaoSocialActionPerformed(evt);
                   }
             });
-            jPanel1.add(textFieldRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 190, 170, -1));
+            jPanel1.add(textFieldRazaoSocial, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, 170, -1));
 
             textFieldCep.setBackground(new java.awt.Color(0, 153, 153));
             textFieldCep.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
@@ -305,22 +305,22 @@ public class alterarCliente extends javax.swing.JPanel {
                         textFieldCepActionPerformed(evt);
                   }
             });
-            jPanel1.add(textFieldCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 390, 170, -1));
+            jPanel1.add(textFieldCep, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 390, 170, -1));
 
             separadorEmail.setBackground(new java.awt.Color(224, 224, 224));
-            jPanel1.add(separadorEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 350, 170, 10));
+            jPanel1.add(separadorEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 350, 170, 10));
 
             comboBoxCidade.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
             comboBoxCidade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione sua cidade" }));
             comboBoxCidade.setBorder(null);
-            jPanel1.add(comboBoxCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 260, 170, -1));
+            jPanel1.add(comboBoxCidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 260, 170, -1));
 
             labelEstado.setFont(new java.awt.Font("Segoe UI Light", 0, 13)); // NOI18N
             labelEstado.setText("Estado: ");
-            jPanel1.add(labelEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 300, -1, -1));
+            jPanel1.add(labelEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 300, -1, -1));
 
             separadorCep1.setBackground(new java.awt.Color(224, 224, 224));
-            jPanel1.add(separadorCep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 410, 170, 10));
+            jPanel1.add(separadorCep1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 410, 170, 10));
 
             javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
             this.setLayout(layout);

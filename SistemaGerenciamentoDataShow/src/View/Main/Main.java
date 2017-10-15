@@ -9,6 +9,7 @@ import View.Cliente.alterarCliente;
 import View.Cliente.excluirCliente;
 import View.Cliente.inserirCliente;
 import View.Cliente.listarCliente;
+import View.Projetor.inserirProjetor;
 import javax.swing.JPanel;
 
 /**
@@ -61,17 +62,14 @@ public class Main extends javax.swing.JFrame {
             menuEdicaoClientes = new javax.swing.JMenuItem();
             menuEdicaoProjetores = new javax.swing.JMenuItem();
             menuEdicaoLocacoes = new javax.swing.JMenuItem();
-            menuEdicaoClientes1 = new javax.swing.JMenuItem();
             menuListagem = new javax.swing.JMenu();
             menuListagemClientes = new javax.swing.JMenuItem();
             menuListagemProjetores = new javax.swing.JMenuItem();
             menuListagemLocacoes = new javax.swing.JMenuItem();
-            menuListagemClientes1 = new javax.swing.JMenuItem();
             menuExclusao = new javax.swing.JMenu();
             menuExclusaoClientes = new javax.swing.JMenuItem();
             menuExclusaoProjetores = new javax.swing.JMenuItem();
             menuExclusaoLocacao = new javax.swing.JMenuItem();
-            menuExclusaoClientes1 = new javax.swing.JMenuItem();
             menuAjuda = new javax.swing.JMenu();
             menuAjudaSobreSistema = new javax.swing.JMenuItem();
 
@@ -98,9 +96,9 @@ public class Main extends javax.swing.JFrame {
                   .addGroup(painelCabecalhoLayout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(painelCabecalhoBotaoMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(424, 424, 424)
+                        .addGap(441, 441, 441)
                         .addComponent(painelCabecalhoImagemProjetor)
-                        .addContainerGap(537, Short.MAX_VALUE))
+                        .addContainerGap(520, Short.MAX_VALUE))
             );
             painelCabecalhoLayout.setVerticalGroup(
                   painelCabecalhoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,6 +154,11 @@ public class Main extends javax.swing.JFrame {
             menuCadastrar.add(menuCadastrarClientes);
 
             menuCadastrarProjetores.setText("Projetores");
+            menuCadastrarProjetores.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        menuCadastrarProjetoresActionPerformed(evt);
+                  }
+            });
             menuCadastrar.add(menuCadastrarProjetores);
 
             menuCadastrarLocacoes.setText("Locações");
@@ -184,14 +187,6 @@ public class Main extends javax.swing.JFrame {
             menuEdicaoLocacoes.setText("Locações");
             menuEdicao.add(menuEdicaoLocacoes);
 
-            menuEdicaoClientes1.setText("Clientes (helio)");
-            menuEdicaoClientes1.addActionListener(new java.awt.event.ActionListener() {
-                  public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        menuEdicaoClientes1ActionPerformed(evt);
-                  }
-            });
-            menuEdicao.add(menuEdicaoClientes1);
-
             barraMenu.add(menuEdicao);
 
             menuListagem.setText("Listagem");
@@ -209,14 +204,6 @@ public class Main extends javax.swing.JFrame {
 
             menuListagemLocacoes.setText("Locações");
             menuListagem.add(menuListagemLocacoes);
-
-            menuListagemClientes1.setText("Clientes (helio)");
-            menuListagemClientes1.addActionListener(new java.awt.event.ActionListener() {
-                  public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        menuListagemClientes1ActionPerformed(evt);
-                  }
-            });
-            menuListagem.add(menuListagemClientes1);
 
             barraMenu.add(menuListagem);
 
@@ -240,14 +227,6 @@ public class Main extends javax.swing.JFrame {
                   }
             });
             menuExclusao.add(menuExclusaoLocacao);
-
-            menuExclusaoClientes1.setText("Clientes (helio)");
-            menuExclusaoClientes1.addActionListener(new java.awt.event.ActionListener() {
-                  public void actionPerformed(java.awt.event.ActionEvent evt) {
-                        menuExclusaoClientes1ActionPerformed(evt);
-                  }
-            });
-            menuExclusao.add(menuExclusaoClientes1);
 
             barraMenu.add(menuExclusao);
 
@@ -287,16 +266,10 @@ public class Main extends javax.swing.JFrame {
       private void menuEdicaoProjetoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuEdicaoProjetoresActionPerformed
       }//GEN-LAST:event_menuEdicaoProjetoresActionPerformed
 
-      private void menuEdicaoClientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuEdicaoClientes1ActionPerformed
-      }//GEN-LAST:event_menuEdicaoClientes1ActionPerformed
-
       private void menuListagemClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuListagemClientesActionPerformed
 
             navegarEntreTelas(new listarCliente());
       }//GEN-LAST:event_menuListagemClientesActionPerformed
-
-      private void menuListagemClientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuListagemClientes1ActionPerformed
-      }//GEN-LAST:event_menuListagemClientes1ActionPerformed
 
       private void menuExclusaoClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuExclusaoClientesActionPerformed
 
@@ -306,13 +279,15 @@ public class Main extends javax.swing.JFrame {
       private void menuExclusaoLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuExclusaoLocacaoActionPerformed
       }//GEN-LAST:event_menuExclusaoLocacaoActionPerformed
 
-      private void menuExclusaoClientes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuExclusaoClientes1ActionPerformed
-      }//GEN-LAST:event_menuExclusaoClientes1ActionPerformed
-
       private void painelCabecalhoBotaoMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_painelCabecalhoBotaoMenuActionPerformed
 
             navegarEntreTelas(new painelCorpo());
       }//GEN-LAST:event_painelCabecalhoBotaoMenuActionPerformed
+
+      private void menuCadastrarProjetoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCadastrarProjetoresActionPerformed
+            
+		navegarEntreTelas(new inserirProjetor());
+      }//GEN-LAST:event_menuCadastrarProjetoresActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -360,17 +335,14 @@ public class Main extends javax.swing.JFrame {
       private javax.swing.JMenuItem menuCadastrarProjetores;
       private javax.swing.JMenu menuEdicao;
       private javax.swing.JMenuItem menuEdicaoClientes;
-      private javax.swing.JMenuItem menuEdicaoClientes1;
       private javax.swing.JMenuItem menuEdicaoLocacoes;
       private javax.swing.JMenuItem menuEdicaoProjetores;
       private javax.swing.JMenu menuExclusao;
       private javax.swing.JMenuItem menuExclusaoClientes;
-      private javax.swing.JMenuItem menuExclusaoClientes1;
       private javax.swing.JMenuItem menuExclusaoLocacao;
       private javax.swing.JMenuItem menuExclusaoProjetores;
       private javax.swing.JMenu menuListagem;
       private javax.swing.JMenuItem menuListagemClientes;
-      private javax.swing.JMenuItem menuListagemClientes1;
       private javax.swing.JMenuItem menuListagemLocacoes;
       private javax.swing.JMenuItem menuListagemProjetores;
       private javax.swing.JPanel painelCabecalho;
