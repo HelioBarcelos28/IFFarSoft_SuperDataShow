@@ -110,7 +110,7 @@ public class listarCliente extends javax.swing.JPanel {
                         jComboBox1ActionPerformed(evt);
                   }
             });
-            jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 370, -1));
+            jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 370, -1));
 
             jSeparator1.setBackground(new java.awt.Color(224, 224, 224));
             jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 120, 230, 10));

@@ -48,7 +48,7 @@ public class ProjetorController {
 	
 	public String inserirProjetor(Projetor projetor) {
 
-		String SQL = "INSERT INTOR Projetor (marca, modelo, numeroSerie, dataCompra, ansiLumens, estado, preco, numeroHorasUso) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+		String SQL = "INSERT INTO Projetor (marca, modelo, numeroSerie, dataCompra, ansiLumens, estado, preco, numeroHorasUso) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
 
 		try {
 
@@ -300,6 +300,61 @@ public class ProjetorController {
 
 					Projetor projetor = new Projetor();
 
+					projetor.setIdProjetor        (rs.getString("idProjetor"));
+					projetor.setMarca			(rs.getString("marca"));
+					projetor.setModelo		(rs.getString("modelo"));
+					projetor.setNumeroSerie		(rs.getString("numeroSerie"));
+					projetor.setDataCompra		(rs.getString("dataCompra"));
+					projetor.setAnsiLumens		(rs.getString("ansiLumens"));
+					projetor.setEstado		(rs.getString("estado"));
+					projetor.setPreco			(rs.getString("preco"));
+					projetor.setNumeroHorasUso	(rs.getString("numeroHorasUso"));
+
+					listaProjetor.add(projetor);
+				}
+			}
+
+			return listaProjetor;
+
+		} catch (SQLException e) { return null; }
+	}
+	
+	/**
+	* 
+	* @param idProjetor
+	* 
+	* @param ordenarCrescenteDecrescente int - ATENÇÃO, para ordenar o resultado da busca em ordem crescente, atribui-se 0, e decrescente, atribui-se o valor 1. 
+	* 
+	* @return Retorna uma lista com os elementos ordenados;
+	*/
+	public ArrayList<Projetor> listarProjetoresEspecificosIdProjetor(String idProjetor, int ordenarCrescenteDecrescente) {
+		
+		String SQL = "SELECT * FROM Projetor WHERE idProjetor LIKE '%" +idProjetor+ "%'";
+		
+		if (ordenarCrescenteDecrescente == 1) {
+			
+			SQL += " ORDER BY idProjetor DESC";
+		} else {
+			
+			SQL += " ORDER BY idProjetor ASC";
+		}
+		
+		SQL += ";";
+
+		ArrayList<Projetor> listaProjetor = new ArrayList();
+		
+		try {
+
+			PreparedStatement stmt = conexao.prepareStatement(SQL);
+			ResultSet rs = stmt.executeQuery();
+
+			if (rs != null) {
+
+				while (rs.next()) {
+
+					Projetor projetor = new Projetor();
+
+					projetor.setIdProjetor		(rs.getString("idProjetor"));
 					projetor.setMarca			(rs.getString("marca"));
 					projetor.setModelo		(rs.getString("modelo"));
 					projetor.setNumeroSerie		(rs.getString("numeroSerie"));

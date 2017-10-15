@@ -9,7 +9,10 @@ import View.Cliente.alterarCliente;
 import View.Cliente.excluirCliente;
 import View.Cliente.inserirCliente;
 import View.Cliente.listarCliente;
+import View.Projetor.alterarProjetor;
+import View.Projetor.excluirProjetor;
 import View.Projetor.inserirProjetor;
+import View.Projetor.listarProjetor;
 import javax.swing.JPanel;
 
 /**
@@ -200,6 +203,11 @@ public class Main extends javax.swing.JFrame {
             menuListagem.add(menuListagemClientes);
 
             menuListagemProjetores.setText("Projetores");
+            menuListagemProjetores.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        menuListagemProjetoresActionPerformed(evt);
+                  }
+            });
             menuListagem.add(menuListagemProjetores);
 
             menuListagemLocacoes.setText("Locações");
@@ -218,6 +226,11 @@ public class Main extends javax.swing.JFrame {
             menuExclusao.add(menuExclusaoClientes);
 
             menuExclusaoProjetores.setText("Projetores");
+            menuExclusaoProjetores.addActionListener(new java.awt.event.ActionListener() {
+                  public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        menuExclusaoProjetoresActionPerformed(evt);
+                  }
+            });
             menuExclusao.add(menuExclusaoProjetores);
 
             menuExclusaoLocacao.setText("Locações");
@@ -264,6 +277,8 @@ public class Main extends javax.swing.JFrame {
       }//GEN-LAST:event_menuEdicaoClientesActionPerformed
 
       private void menuEdicaoProjetoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuEdicaoProjetoresActionPerformed
+		
+		navegarEntreTelas(new alterarProjetor());
       }//GEN-LAST:event_menuEdicaoProjetoresActionPerformed
 
       private void menuListagemClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuListagemClientesActionPerformed
@@ -288,6 +303,16 @@ public class Main extends javax.swing.JFrame {
             
 		navegarEntreTelas(new inserirProjetor());
       }//GEN-LAST:event_menuCadastrarProjetoresActionPerformed
+
+      private void menuListagemProjetoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuListagemProjetoresActionPerformed
+           
+		navegarEntreTelas(new listarProjetor());
+      }//GEN-LAST:event_menuListagemProjetoresActionPerformed
+
+      private void menuExclusaoProjetoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuExclusaoProjetoresActionPerformed
+            
+		navegarEntreTelas(new excluirProjetor());
+      }//GEN-LAST:event_menuExclusaoProjetoresActionPerformed
 
 	/**
 	 * @param args the command line arguments

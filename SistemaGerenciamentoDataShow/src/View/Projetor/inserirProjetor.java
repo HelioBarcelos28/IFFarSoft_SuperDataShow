@@ -8,6 +8,7 @@ package View.Projetor;
 import Controller.Conexao;
 import Controller.ProjetorController;
 import Model.Projetor;
+import java.awt.HeadlessException;
 import java.sql.Connection;
 import javax.swing.JOptionPane;
 
@@ -175,13 +176,13 @@ public class inserirProjetor extends javax.swing.JPanel {
             this.setLayout(layout);
             layout.setHorizontalGroup(
                   layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addComponent(painelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                  .addComponent(painelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1028, Short.MAX_VALUE)
             );
             layout.setVerticalGroup(
                   layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(painelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(painelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE)
                         .addContainerGap())
             );
       }// </editor-fold>//GEN-END:initComponents
@@ -215,38 +216,40 @@ public class inserirProjetor extends javax.swing.JPanel {
 			JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos!");
 		} else {
 			
-			projetor.setAnsiLumens(textFieldAnsiLumens.getText());
+			projetor.setMarca(textFieldMarca.getText());
+			projetor.setModelo(textFieldModelo.getText());
+			projetor.setNumeroSerie(textFieldNumeroSerie.getText());
 			projetor.setDataCompra(textFieldDataCompra.getText());
-			
-			switch (comboBoxEstado.getSelectedItem().toString()) {
+			projetor.setAnsiLumens(textFieldAnsiLumens.getText());
+
+			switch (comboBoxEstado.getSelectedIndex()) {
 				
-				case ("Disponível"): 
+				case 1: 
 					
 					projetor.setEstado("D");
 					break;
-				case ("Locado"): 
+				case 2: 
 					
 					projetor.setEstado("L");
 					break;
-				case ("Manutenção"): 
+				case 3: 
 					
 					projetor.setEstado("M");
 					break;
-				case ("Fora de estoque"): 
+				case 4: 
 					
 					projetor.setEstado("FE");
 					break;
 			}
 			
-			projetor.setMarca(textFieldMarca.getText());
-			projetor.setModelo(textFieldModelo.getText());
-			projetor.setNumeroHorasUso("100");
-			projetor.setNumeroSerie(textFieldNumeroSerie.getText());
 			projetor.setPreco(textFieldPreco.getText());
+			projetor.setNumeroHorasUso("100");
 			
-			pc.inserirProjetor(projetor);
-			
-			JOptionPane.showMessageDialog(null, "Projetor cadastrado com sucesso!");
+			try {
+				
+				pc.inserirProjetor(projetor);
+				JOptionPane.showMessageDialog(null, "Projetor cadastrado com sucesso!");
+			} catch (HeadlessException e) { System.out.println("deu merda"); }
 		}
       }//GEN-LAST:event_botaoCadastrarActionPerformed
 
